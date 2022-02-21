@@ -1,0 +1,13 @@
+' PARAMETERS for plotting raster map files
+'Grid cell width in pixels'   1
+'Background color'            0
+'Number of colors'            8
+'Upper value
+-0.001    -1
+ 0.999     1
+ 2.999     2
+ 9.99      3
+ 29.9      4
+ 99.9      5
+ 299.9     6
+ 2000      7
