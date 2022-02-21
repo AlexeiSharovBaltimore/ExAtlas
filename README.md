@@ -14,25 +14,46 @@ or otherwise disclaimed to anyone, in whole or in part, without the prior writte
 DIRECTORY STRUSTURE
 
 ExAtlas = exatlas.ini file
+
  |
+ 
  ----exatlas = html files
+ 
  |      |
+ 
  |      ----bin = exatlas.cgi (CGI program)
+ 
  |      |
+ 
  |      ----images = images
+ 
  |      |
+ 
  |      ----output = writable directory for output files
+ 
  |      |
+ 
  |      ----download
+ 
  |      
+ 
  |     
+ 
  ----exatlasInfo
+ 
         |
+        
         ----bin = other programs (C, perl), C-programs should be compiled here
+        
         |
+        
         ----info = writable directory for personal config files, login.txt
+        
         |
+        
         ----data = writable directory for data files
+        
+        
 
 Compile C-programs in ExAtlas/exatlasInfo/bin:
 gcc anova_oneway.c -lm -o anova_oneway
