@@ -1,0 +1,76 @@
+<title>Registration ExAtlas</title>
+<BODY BGCOLOR=white>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function check_form(){
+	var x1 = document.login.firstname.value;
+	if(x1.search(/^[- \w]+$/)<0){
+		alert("First name should not include special characters");
+		return(false);
+	}
+	var x2 = document.login.lastname.value;
+	if(x2.search(/^[- \w]+$/)<0){
+		alert("Last name should not include special characters");
+		return(false);
+	}
+	var x3 = document.login.loginname.value;
+	if(x3.search(/^[+\w@.\-]+$/)<0){
+		alert("Login name should not include special characters or spaces");
+		return(false);
+	}
+	var x4 = document.login.passwd.value;
+	if(x4.search(/ |\\|\/|"|'|`/)>=0){
+		alert("Password should not include spaces, slashes, quotation marks");
+		return(false);
+	}
+	if(x4.search(/[A-Za-z]/)<0){
+		alert("Password should include characters");
+		return(false);
+	}
+	var x5 = document.login.email.value;
+	if(x5.search(/^[-\w@.]+$/) < 0){
+		alert("Email should not include special characters, except @.-"); return(false);
+	}
+	var mailparts = x5.split("@")
+	if(mailparts.length != 2 || !mailparts[0].length || !mailparts[1].length){
+		alert("Bad email address"); return(false);
+	}
+	if(!x1 || !x2 || !x3 || !x4 || !x5){
+		alert("All fields in the form should be filled"); return(false);
+	}
+	if(x4.length<5||x4.length>20||x3.length<5||x3.length>20){
+		alert("Login name and password should be 5-20 characters long"); return(false);
+	}
+	document.login.submit();
+}
+<!-- end script --></SCRIPT>
+<TABLE BGCOLOR=black>
+<TR><TD WIDTH=168 background=images/head3.gif><IMG SRC=images/head1.jpg></A></TD>
+<TD WIDTH=678 background=images/head4.gif ALIGN=CENTER><IMG SRC="images/head2.gif" BORDER=0 ALT="ExAtlas: Identification of DNA over-represented motifs" useMap=#mapHead2></TD></TR>
+<map NAME='mapHead1'>
+<area shape="rect" href=https://www.nih.gov coords="0,0,82,50">
+<area shape="rect" href=https://www.irp.nia.nih.gov coords="83,0,167,50">
+<area shape="rect" href=https://www.irp.nia.nih.gov coords="0,51,167,86">
+</map>
+<map NAME='mapHead2'>
+<area shape="rect" href=index.html coords="0,0,677,50">
+<area shape="rect" href=https://www.irp.nia.nih.gov/branches/lg/dgas/dgas.htm coords="0,51,677,86">
+</map>
+</TABLE>
+
+<H2>ExAtlas Registration Form &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <A HREF=index.html><IMG SRC=images/button_home.gif BORDER=0></A></H2>
+
+Please fill ALL the fields.<p>
+<FORM NAME=login METHOD=POST ACTION=https://lgsun.irp.nia.nih.gov/exatlas/bin/exatlas.cgi>
+First name: <input size=20 name="firstname"><p>
+Last name: &nbsp;<input size=20 name="lastname"><p>
+Login name: <input size=20 name="loginname"> Use 5-20 charecters no spaces<p>
+Password: &nbsp; <input type="password" size=20 name="passwd"> Use 5-20 charecters no spaces<p>
+Your e-mail: <INPUT SIZE=40 NAME="email"><p>
+Correct email is necessary for 
+<INPUT TYPE=BUTTON VALUE = "Register" onclick=check_form();><p>
+<INPUT TYPE=hidden NAME="register" VALUE="register">
+</FORM><p>
+
+If you register, you can keep your profile, uploaded data, and generated results.<p>
+

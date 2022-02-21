@@ -1,0 +1,1102 @@
+<HTML><HEAD><title>ExAtlas Help</title></HEAD>
+<BODY BGCOLOR=white>
+<TABLE BGCOLOR=black>
+<TR><TD WIDTH=168 background=images/head3.gif><IMG SRC=images/head1.jpg></A></TD>
+<TD WIDTH=678 background=images/head4.gif ALIGN=CENTER><IMG SRC="images/head2.gif" BORDER=0 ALT="ExAtlas: Meta-analysis of gene expression data" useMap=#mapHead2></TD></TR>
+<map NAME='mapHead1'>
+<area shape="rect" href=https://www.nih.gov coords="0,0,82,50">
+<area shape="rect" href=https://www.irp.nia.nih.gov coords="83,0,167,50">
+<area shape="rect" href=https://www.irp.nia.nih.gov coords="0,51,167,86">
+</map>
+<map NAME='mapHead2'>
+<area shape="rect" href=index.html coords="0,0,677,50">
+<area shape="rect" href=https://www.irp.nia.nih.gov/branches/lg/dgas/dgas.htm coords="0,51,677,86">
+</map>
+</TABLE>
+
+<H2>ExAtlas Overview and Help &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <A HREF=index.html><IMG SRC=images/button_home.gif BORDER=0></A></H2>
+
+<h3>Contents</h3>
+<ol>
+<li><a href=#geninfo>General Information</a>
+<li><a href=#register>Register with ExAtlas</a>
+<li><a href=#tasks>How to use ExAtlas?</a> (Step-by-step instructions)
+<li><a href=#terms>List of terms</a>
+<li><a href=#disclaimer>Disclaimer: terms of use</a>
+</ol>
+
+<a name=geninfo><h3>1. General Information</h3></a>
+
+ExAtlas is a software for <i>meta-analysis of gene expression data</i>. In contrast to other
+software, it compares <b>multi-component data sets</b> and generates results for all
+combinations (e.g., all gene expression profiles vs. all GO annotations). Its functions include:<br>
+(1) <i>standard meta-analysis:</i> fixed and random effects (DerSimonian-Laird), z-score and Fisher's methods;<br>
+(2) <i>global correlation analysis</i> between different gene expression data sets;<br>
+(3) <i>gene set enrichment</i> among upregulated and downregulated genes;<br>
+(4) <i>gene set overlap</i> (e.g., between upregulated genes and Gene Ontology (GO) sets of genes);<br>
+(5) <i>gene association</i> (e.g., find sets of coregulated genes in two similar cell types of tissues or
+find targets of transcription factors that are significantly enriched among upregulated or downregulated genes.<br>
+(6) <i>statistical analysis of gene expression</i> (similar to <a href=/ANOVA/>NIA Array Analysis</a>).
+Expression profile data can be uploaded manually or extracted from the <a href=https://www.ncbi.nlm.nih.gov/geo/>Gene Expression Omnibus (GEO)</a> database.
+In particular, users can combine samples from multiple data sets (and possibly different platforms) in GEO database, 
+assess the quality of data, and perform statistical analysis.<br>
+(7) <i>preloaded public data</i> Several most popular public data sets (e.g., GNF, BrainScope, Gene Ontology, KEGG, GAD phenotypes) are pre-loaded for immediate use.<p>
+
+NOTE: The error message "Operation failed!" means a suspicious command. Please send a message
+to <a href=mailto:sharoval@mail.nih.gov>administrator</a> and explain the problem.<p>
+
+ExAtlas has been developed in the Laboratory of Genetics and Genomics at the 
+<a href=https://www.nia.nih.gov/>National Institute of Aging (NIA/NIH)</a>.<br>
+<b>How to cite ExAtlas:</b> Sharov, A.A., Schlessinger, D., and Ko, M.S.H. 2015. Exatlas: An 
+interactive online tool for meta-analysis of gene expression data.
+J. Bioinform. Comput. Biol., <a href=http://www.worldscientific.com/doi/abs/10.1142/S0219720015500195>DOI: 10.1142/S0219720015500195</a>.<p>
+
+The workflow in ExAtlas is shown in Fig.1 below.<p>
+
+<center><img src=images/workflow.bmp width=547 height=384><p>
+<b>Fig. 1.</b> Workflow in ExAtlas - software for gene expression meta-analysis.</center><p>
+
+For example, a user may search GEO database for specific terms such as "kidney", "muscle", or
+"T-cells", and the software provides information on samples where these terms are found. The
+user then selects samples from the list and the software generates a gene expression profile matrix.
+ExAtlas can evaluate the quality of data and then low-quality samples can be removed. Alternatively, 
+expression profile data can be uploaded manually. The gene expression profile matrix
+can then be used for ANOVA, pair-wise comparison between tissues or cell types, Principal
+Component Analysis (PCA), making scatter-plots, expression profiles of individual genes, and 
+heatmaps. Several gene expression matrices (e.g., <a href=http://biogps.org>GNF data</a> on tissue/organ expression profiles)
+are pre-loaded in the software as public resources and are available to every user. Each gene 
+expression matrix can be compared using correlation analysis with any other expression matrix.<p>
+
+Another important type of data is a gene set (or "geneset"). Each geneset file combines
+multiple genesets. The ExAtlas software stores many preloaded public geneset files, including
+Gene Ontology (GO), KEGG pathways</a>, and BIOCARTA pathways.
+Gene set enrichment analysis (PAGE) is used to compare a gene expression matrix file with a geneset
+file. It evaluates if genes that are upregulated or downregulated in each tissue or cell type are
+enriched in specific genesets (e.g., GO or KEGG). Another option is to generate a new geneset file 
+that contains genes that are significantly upregulated or downregulated
+in each tissue or cell type. This geneset file can be then tested for geneset <a href=#overlap>overlap</a>. The
+overlap is evaluated using hypergeometric distribution. Results of analysis are presented
+as color-coded tables or bar chart profiles.<p>
+
+<center><img src=images/main_menu.bmp><p>
+<b>Fig. 2.</b> The main menu in ExAtlas.</center><p>
+
+The main menu of the program (Fig. 2) includes
+pull-down menus for selecting data files (expression profile matrices, genesets, samples, and outputs),
+buttons for opening these files (used for visualization and for staring analysis), buttons to
+search GEO database and upload custom data files. The bottom portion of the main menu is used for
+downloading or deleting data files, as well as editing file names, file descriptions, column headers,
+and geneset names and descriptions. File editing also includes options to delete or copy selected 
+expression profiles or genesets.<p> 
+
+<a name=register><h3>2. Register with ExAtlas</h3></a>
+
+Registration is optional; you can login as guest (click the "Start using ExAtlas" button)
+and do the analysis. However, registration has many benefits because you can keep your
+profile, uploaded files, and save results of analysis for future sessions. We will not use 
+your e-mail address except to notify you of a new feature of ExAtlas (less than 1 message per year) 
+and will not release it to any third party. To register
+click on the "Register here" link on the <a href=index.html>front page</a>.
+
+<a name=tasks><h3>3. How to use ExAtlas? Step-by-step instructions</h3></a>
+
+<b>List of tasks you can do with ExAtlas</b><br>
+<ol>
+<li><a href="#searchGEO">Search GEO database</a> for gene expression data, extract data, and make a matrix
+<li><a href="#anova">Open gene expression data and statistical results (ANOVA)</a>
+<li><a href="#heatmap">Plot a heatmap</a> for the gene expression profile matrix
+<li><a href="#pca1">Principal Component Analysis (PCA)</a>
+<li><a href="#find_gene">Search for a gene</a> and display the expression profile for this gene
+<li><a href="#pairwise">Pair-wise comparison</a> of expression profiles of tissues or cell types
+<li><a href="#metaanalysis">Standard meta-analysis</a>
+<li><a href="#correlation">Correlation</a> between different gene expression data sets
+<li><a href="#output">Exploring the output file</a> for correlation and other analyses
+<li><a href="#geneset_enrich">Geneset enrichment analysis</a> of up/down-regulated genes
+<li><a href="#geneset_make">Generate a file with differentially-expressed genesets</a>
+<li><a href="#geneset_open">Explore a geneset file</a> and/or analyze gene overlaps with another file
+<li><a href="#quality">Evaluate quality</a> of individual samples and remove low-quality samples
+<li><a href="#upload">Upload files for analysis</a> (formats, normalization, editing, copying)
+<li><a href="#edit_file">Edit files</a>
+<li><a href="#practice">Practice session</a>
+</ol><br>
+A short tutorial for each of these tasks can be found below.
+
+<a name=searchGEO><h3>3.1. Search GEO database for gene expression data</h3></a>
+
+After you logged in, the first thing you do is to select the <a href="#organism">organism species</a>.
+Then click the button "Find samples in GEO". In the form that appears, type in search terms
+(comma separated) and click the "Search" button. Search terms may include tissues, cell types/lines
+treatments, knockout genes, or GEO accession numbers (series or samples). If multiple terms 
+are entered, then search results are sorted by the decreasing number of matching terms, and then, 
+by the decreasing number of hits within each data series. You can specify terms of avoid, such as
+cancer, tumor, biopsy, patient, hepatitis, HIV. Use buttons "Next page" to progress through the list
+of results. Links to GEO series (e.g., GSE23310) and samples (e.g., GSM571945) lead to the GEO
+database website, where you can read more details about the data. Use checkboxes to select samples
+to be extracted (these selections are stored even if you go to the previous or next page). When
+you finished selecting samples, edit the name of a new samples file and click the button "Save samples".
+Alternatively, you can add selected samples to already existing samples file (button
+"Add samples").<p>
+
+When you saved the samples, these samples will be appear in the web page. Alternatively, you
+can select any previously save file with samples and open it from the main menu (Fig. 2). The next
+step is to edit the list of samples. Some samples can be deleted or copied to another file.
+An important step is to edit descriptions of samples, because samples with identical descriptions
+within the same data set (GSE series) are considered as replications and will be placed together. 
+Thus, replication numbers or array ID numbers should be removed from sample descriptions. 
+If a description is not clear, click on sample ID and check detailed description in the GEO database,
+then edit sample description in the list of samples. After the list is finalized, generate a 
+combined matrix of all samples by clicking the button "Generate matrix". Although samples from
+different data series (GSE accession numbers) can be combined in one list of samples, in many cases
+it is better to save each data series separately, upload corresponding data from GEO, and later
+combine data series using batch-normalization method (see <a href="#edit_file">Edit files</a>).
+Downloading and processing the data takes some time. Thus, the "interruption screen" appears 
+(see Fig. 3):<p>
+
+<center><img src=images/interrupt.bmp><p>
+<b>Fig. 3.</b> Interruption screen is used for long computational tasks.</center><p>
+
+In this window you can check your task, cancel the task, or close the window without cancelling 
+the task. The link to "Log file" is provided so that you can check the status of your task.
+Keep reloading the log file to see changes. If you click "Check your task" but it is not finished,
+then the screen will say "Your task is not finished!". Results will be shown when the task is
+finished. If data comes from different array platforms, expression profiles are combined based on
+gene symbol, and if multiple probes are available for a gene, then the best probe is used with
+either higher statistical significance (F-statistics) or higher average signal intensity (if there
+are no replications). However, if all samples are obtained with the same array platform, then 
+redundant probes are not removed; and thus, a gene can be represented by multiple probes.<p>
+
+If you cannot find a specific data set, which you know exists in GEO, this may have resulted from
+data filtering. Your data set may have been filtered out because the array platform type is a cDNA array, tiling array,
+genomic array, exon array, non-matching species, or RNA-seq. If you believe that the data was 
+filtered out by mistake, please send a note to <a href=mailto:sharoval@mail.nih.gov>webmaster</a>.
+Currently, the GEO database has no uniform format for processed RNA-seq data, and thus, automated 
+download is not possible. However, you can upload RNA-seq data (e.g., from Cufflinks) manually
+using "Upload data file" button (Fig. 2).<p> 
+
+<a name=anova><h3>3.2. Open gene expression data and statistical results (ANOVA)</h3></a>
+
+If you select a file with gene expression profiles in the main menu (Fig. 2) and then click the
+button "Open", a new screen (or tab) will open in your browser, which allows you to display
+expression profiles in various ways (Fig. 4). If you open this file for the first time after uploading,
+then you may need to wait till the statistical analysis is finished. If the data contains too
+many columns, the interruption screen (Fig. 3) may appear while the analysis is performed.<p>
+
+<center><img src=images/open_matrix.bmp><br>
+<b>Fig. 4.</b> Open expression profile matrix - screen capture.</center><p>
+
+From this screen you can plot a heatmap, do Principal Component Analysis (PCA), make a
+scatterplot that displays differentially-expressed genes, and search for a specific gene 
+to display its expression profile. Other functions (see sections 6 - 11) include 
+meta-analysis, correlation with another gene expression profiles data, gene set enrichment 
+analysis (e.g., for functional annotations),
+generating sets of significant/specific genes, evaluating data quality, downloading statistical
+results (ANOVA), downloading raw data, normalizing data with quantile method 
+(<a href=https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Citation&list_uids=12538238>
+Bolstad et al., 2003</a>), and removing redundant probes (leaving best probe for each gene).<p>
+
+Statistical analysis of gene expression data is based on the single-factor ANalysis Of VAriance 
+(<a href="#anova1">ANOVA<a>). The program calculates <a href="#fstatistics">F-statistics</a> which
+is a ratio of factor variance (i.e., variance between averages for factor levels) to the 
+<a href="#errorvariance">error variance</a>. F-statistics is then used to estimate the P-value
+according to theoretical F-distribution. Because in microarray analysis we simultaneously evaluate
+changes among several thousands of genes, it is necessary to adjust results for multiple hypotheses
+testing. The False Discovery Rate (<a href="#fdr">FDR</a>) shows the expected proportion of false
+positives among genes that are considered significant; it is estimated from p-values using method
+of Bejamini-Hochnberg. FDR &le; 0.05 and fold change &le; 2 are used as default criteria of statistical 
+significance. The error model attempts to get a better estimate for the true error variance than 
+the <a href="#errorvariance">error variance</a> estimated from data (we call it 'empirical error variance').
+In ExAtlas, we use the maximum of empirical error variance and error variance averaged across 500 genes 
+with similar average expression. This error model was proposed in the 
+<a href=https://lgsun.irp.nia.nih.gov/ANOVA>NIA Array Analysis</a> software as a method to reduce
+the number of false positives.<p>
+
+Additional options for running ANOVA are available if you chose
+to "Run ANOVA again" which is a button in the section "Other functions" near the bottom of the web 
+page (Fig. 4). This button is not available for public data sets, but you can make your own copy
+of public data (hint: use "Edit" button for "expression profiles" in section "File management", 
+Fig. 2; select all samples and save them as your own data set), and then run ANOVA with custom
+parameters or with a custom annotation file for the array platform. When running ANOVA again you
+can select one of the following error models:
+1 = Actual error variance for each probe,
+2 = Average error variance for probes with similar expression level,
+3 = Bayesian correction of error variance (Baldi & Long 2001),
+4 = Maximum between actual and expected average error variances,
+5 = Maximum between actual and Bayesian error variances.
+You can select a cutoff expression value (probes with maximum value below cutoff are ignored), modify
+threshold <a href="#zvalue">z-value</a> used to remove outliers, modify proportion of probes with high error variances 
+to ignore in error models, or modify  the number of probes in a sliding window to average error variance.
+In addition you can set an option to use probe ID if gene symbol is missing. This option allows
+processing of non-annotated probes.<p>
+
+If the input file has no replications, then the error variance is estimated based on the
+assumption that at least half of gene expression values (log-transformed) represent random 
+deviations from the average, and less than half values correspond to the effects of factors. First,
+genes are sorted according to their average log-expression, and then error variance is estimated 
+within a sliding window of 500 genes with similar expression. Absolute deviations of 
+log-expression of each gene from its mean expression value in all samples (i.e., |x-M|) is then 
+combined for all 500 genes into one data set. For example, if the data matrix has 15 columns (=samples),
+then there will be 7500 deviation values (15 x 500) within the sliding window. The error variance 
+is then estimated as the median of these deviation values divided by 0.675 (which is inverse half-normal
+cumulative distribution for 0.5):<p>
+
+<center>Error Variance = median(deviations)/0.675.</center><p>
+
+In ExAtlas, ANOVA is run when you open the gene expression profile matrix for the first time.
+If the file has too many samples, the interruption screen (Fig. 3) may appear to wait until
+the task is finished. A tab-delimited text file with ANOVA results can be downloaded by clicking
+the button "Get ANOVA output" at the bottom of the screen which appears after you open any
+gene expression matrix file (see Fig. 4).<p>
+
+<a name=heatmap><h3>3.3. Plot a heatmap for the gene expression profile matrix</h3></a>
+
+To plot a heatmap (see example in Fig. 5A), select gene filtering parameters (<a href=#fdr>FDR</a> threshold
+and fold change threshold), kind of filtering, and kind of clustering in the upper portion of 
+the "Open expression profile" screen (Fig. 4). You can check the box "Show replications" if you
+want to see data for individual replications. Then click the button "Make heatmap".
+Filtering of genes is important, first, to save processing time, and second, to make the heatmap
+easier to view. Non-significant genes (FDR<0.05) only add noise to the heatmap, and better
+filtered out. Fold-change threshold = 2 is recommended. After the heatmap is displayed,
+you can download the filtered and sorted matrix (as a tab-delimited text file) by using the link
+"Matrix file" at the top of the page. This file can then be examined in Excel. Because of the
+large number of genes, gene symbols may be not visible and represent by gray area (or lines) at the
+left side of the heatmap. However, if you click in the row header area, gene name and expression profile
+will be displayed.<p>
+
+<center><img src=images/heatmap_example.bmp><br>
+<b>Fig. 5.</b> Example of a heatmap (A) and a scatterplot (B) for GNF mouse v.3 data</center><p>
+
+The bottom portion of the screen is designed for editing the heatmap. For example, you can change
+the maximum value and click "Re-plot the matrix" button. If the maximum value is reduced,
+the colors will become darker, if the maximum value is increased, the colors will become 
+lighter. Then, you can delete of move columns and rows using menu fields. For example, you can
+select a column (or a column range) and move it before another selected column.<p>
+
+<a name=pca1><h3>3.4. Principal Component Analysis (PCA)</h3></a>
+
+Principal component analysis (<a href=#pca>PCA</a>) can be launched using the same filtering 
+parameters as for heatmap generation. You can check the box "Show replications" if you
+want to see data for individual replications. Click the button "PCA" located near the top of the 
+"Open expression profile" screen (Fig. 4). PCA is computed using the Singular Value Decomposition
+(SVD) method that generates eigenvectors both for rows and columns of the log-transformed 
+data matrix (Gabriel 1971. Biometrika 58: 453-467; Chapman et al. 2002. Bioinformatics. 18: 202-204).
+For plotting of tissues and genes (biplot) we used column projections. The advantage of the 
+biplot compared to a traditional PCA is that the user can visually explore associations between
+genes and tissues. ExAtlas generates 2-dimensional and 3-dimensional 
+(based on VRML) biplots (Fig. 6). All biplots (including 3D) are interactive; each gene is 
+a hyperlink to its annotation and expression pattern. To view PCA in 3-dimensions you need a VRML 
+viewer, for example <a href=http://freewrl.sourceforge.net>FreeWRL</a> or <a href=http://www.cortona3d.com>Cortona3d</a>.<p>
+
+<center><img src=images/pca.gif><p>
+Fig. 6. PCA and biplot of mouse gene expression in various tissues (GNF database).
+A and B = 2-D biplot for tissues and genes, respectively; C = 3-D PCA; D = 3-D biplot for
+tissues (green spheres) and genes (blue cubes).</center><p>
+
+Checkbox "PC gene clusters" (Fig. 4) is used to identify 2 clusters of genes that are 
+positively and negatively correlated with each principal component (Fig. 7). The degree of gene 
+expression change within a specific PC is measured by the slope of regression of 
+log-transformed gene expression versus the corresponding eigenvector multiplied by the 
+range of values within the eigenvector. Gene is associated with the most correlated PC;
+however two additional conditions should be met: (a) the degree of gene expression 
+change exceeds the threshold (default = 2-fold change), and (b) the 
+absolute value of correlation exceeds the threshold (default = 0.7). These two parameters can
+be changed in the menu: "Correlation (PCA cluster)" and "Fold change (PCA cluster)" (Fig. 4).<p>
+
+<center><img src=images/pcclust.jpg><p>
+Fig. 7. Gene clustering based on principal components</center><p>
+
+<a name=find_gene><h3>3.5. Search for a gene and display the expression profile</h3></a>
+
+Type a gene symbol or GenBank accession number in section "Find genes" near the middle of the 
+"Open expression profile" screen (Fig. 4) and click the button "Search". You can specify  
+what category of gene description you search (gene symbol, GenBank accession, gene name, probe ID). 
+If many genes (or probes) match to your search, all of them
+will be displayed, and then you can select individual genes or probes. Checkbox "Sort" can be checked
+if you wish to sort cell/tissue types according to the expression of the gene you search. When the gene
+(or probe) is found, ExAtlas generates a histogram with gene expression profile (Fig. 8),
+and a table of expression in each tissue/cell type. The histogram shows average log-expression values
+for each cell type or tissue relative to the global median; to see values for individual replications 
+click the button "Show replications".<p>
+
+<center><img src=images/hoxa1_expr_profile.bmp><p>
+Fig. 8. Expression change of Hoxa1 after induction of 137 transcription factors in mouse ES cells</center><p>
+
+From the screen with gene expression histogram (Fig. 8) you can search for other genes with the same 
+expression profile using correlation threshold and fold change threshold (which are applied simultaneously).<p>
+
+<a name=pairwise><h3>3.6. Pair-wise comparison of expression profiles of tissues or cell types</h3></a>
+
+Select two tissues or cell types which you want to compare from pull-down menu in the section 
+"Pairwise comparison" near the middle of the "Open expression profile" screen (Fig. 4). As a baseline,
+you can use median expression instead of a second tissue. Then select parameters (<a href=#fdr>FDR</a> threshold
+and fold change threshold) and click the button "Scatter-plot". The scatterplot is a graph where
+each point represents one gene with x-coordinate = log expression in tissue #2 (or median) and
+y-coordinate = log expression in tissue #1. Gray dots = non-significant genes, red dots = significant
+upregulated genes, and green dots = significant downregulated genes. Statistical significance is
+based on <a href="#zvalue">z-value</a> which are estimated from the ANOVA error variance by equation:
+
+<table><tr><td width=180><td width=900><i>z</i> = |<i>m1 - m2</i>| / sqrt[ErrVar*((1/<i>n1</i>)+(1/<i>n2</i>))],</table>
+
+where <i>mi</i> and <i>ni</i> are the mean and sample size for tissue <i>i</i>, and ErrVar is the error
+variance estimated from the error model of ANOVA. From <a href="#zvalue">z-values</a> the program estimates p-values,
+and finally, <a href=#fdr>FDR</a> values which are used to evaluate statistical significance. To
+display the list of significant genes click on the link "List of over-expressed genes" or
+"List of under-expressed genes". If you click on probe ID (or gene symbol) in the list you get the
+expression profile of the gene. The list of genes can be further examined for significant
+<a href=#overlap>overlap</a> with various genesets for functional annotation (e.g., GO, KEGG). The menu for
+comparison is located just above the table of significant genes. The list of genes is also
+available as tab-delimited text (link at the top of the screen).<p>
+
+If you use median expression profile for comparison (as control)
+then an additional feature is recorded in the output table: a <a href="#zvalue">z-value</a> that characterizes gene 
+<a href=#specificity>specificity</a> (column header "Specificity"). This z-value is estimated 
+by comparing log-expression in a given tissue (<i>mi</i>)
+with average expression in other tissues (<i>M</i>) that are not correlated with this tissue
+(see details <a href=#specificity>here</a>).<p>
+
+<h3>3.7. <a name="metaanalysis">Standard meta-analysis</a></h3>
+
+The goal of standard meta-analysis is to integrate information from multiple independent studies.
+It can increase statistical power and reduce false-positive effects. ExAtlas implements four most
+popular methods: Fisher's, Z-score, Fixed effects, and Random effects. First three methods are
+relevant only if combined studies implement exacltly the same methodology (e.g., same cell lines
+same reagents, and same equipment). In practice, the methodologies often differ between
+studies, and thus, the Random effect method appears most relevant. Fisher's method combines 
+log-transformed p-values from m studies and generates a chi-square statistics with
+2m degrees of freedom:<br>
+
+<center><img src=images/metaanalysis_fisher.bmp width=159 hight=52></center><br>
+
+Z-score method combines z-scores (i.e., ratio of mean effect to the S.D. of effect) of different studies
+using weights which are estimated from sample sizes. Here the term "effect" means
+logratio of gene expression change.<br>
+
+<center><img src=images/metaanalysis_zscore.bmp width=311 hight=62></center><br>
+
+Fixed effects method estimates a weighted sum of effects (i.e., logratio of gene expression change),
+where weights are inverse to variance:<br>
+
+<center><img src=images/metaanalysis_fixed.bmp width=305 hight=63></center><br>
+
+Random effects method takes into account the variance of heterogeneity between studies 
+(DerSimonian-Laird); thus, the weights are adjusted for heterogeneity:<br>
+
+<center><img src=images/metaanalysis_random.bmp width=418 hight=102></center><br>
+
+The first step in meta-analysis is to specify gene expression data to be combined. When you
+open a file with gene expression profiles (Fig. 4), use section 2 (Pairwise comparison), and
+select the sample (cell type or tissue) which you want to examine and a baseline sample for
+comrparison (e.g., control or median profile). Then click the button "Meta-analysis". 
+A new screen will open
+(Fig. 9) where you can add data for meta-analysis. Specify another expression profile data
+set and select the sample of interest and a baseline sample, and then click the button "Add data".
+If all data sets use the same array platform, then the meta-analysis is done for each probe ID
+(there may be multiple probe ID-s for the same gene). Otherwise, the meta-analysis is done
+for each gene symbol. If the new data set belongs to a different species, first select a 
+new species, and then select the data file. Gene symbols will be converted to the first species
+using <a href=https://www.ncbi.nlm.nih.gov/homologene target=_blank320>HomoloGene</a>. To delete
+a data pair, use the corresponding checkbox and then click on the button "Delete checked data".
+Part 3 in the menu (Fig. 9) allows you to save your meta-analysis design for the future: fill up
+description field (optional), make sure that selected file is "--- New file ---" then click on
+the button "Save metaanalysis". The pop-up window will appear where you type in file name and
+click "Ok". Also you can load one of the previously saved meta-analysis designs: select the file
+you need and click the button "Load metaanalysis".<p>
+
+<center><img src=images/metaanalysis_screen.bmp width=547 hight=425></center><br>
+Fig. 9. Screen for compiling data for meta-analysis.</center><p>
+
+When all data sets for meta-analysis are assembled, select parameters for meta-analysis
+(FDR threshold and fold-change threshold), and click the button "Start analysis". The
+output page shows the number of significant genes for each method of meta-analysis. Click
+on the number of gene to display the list of genes and corresponding statistics. Effects are
+shown as either logratio (log10) (default) or as fold change. The format of effects can be 
+selected above the output table that shows the number of significant genes for each method.
+The list of significant genes can be further explored for significant <a href=#overlap>overlap</a> with various
+data sets.
+
+<a name="correlation"><h3>3.8. Correlation between different gene expression data sets</h3></a>
+
+To characterize the effect of treatments on gene expression profiles it is often necessary to
+examine correlations between different gene expression data sets. For example, the change of
+expression of genes following the induction of various individual transcription factors in ES
+cells was compared with gene expression profiles in various tissues and cell types
+<a href=https://www.ncbi.nlm.nih.gov/pubmed/22355682>Nishiyama et al. 2011</a>. Results indicated
+that some transcription factors (e.g., Ascl1, Gata3, Myod1, Sfpi1) induced tissue-specific genes.
+To estimate correlations, open the first file with gene expression profiles, then click the
+"Correlation" button in the section "Other tasks" (Fig. 4). This will take you to the next
+screen where you can select the second file with gene expression profiles (Fig. 10). The second file can
+be the same as the first one if you wish to generate an auto-correlation matrix. If you want
+to compare gene expression change between different species, then select a species
+for comparison. The screen will be reloaded with a list of data for that species. Use FDR threshold 
+and fold change threshold to limit the number of genes. Lower values of FDR and higher values of 
+fold change correspond to more stringent filtering.<p>
+
+<center><img src=images/correlation_screen.bmp><p>
+Fig. 10. Screen for correlation analysis of two data sets with gene expression profiles. 
+</center><p>
+
+The algorithm for estimating correlations is the following.
+<ol><li>Log-transform gene expression data and run <a href=#anova>ANOVA</a> for each file
+<li>For each gene, select the best probe (with highest <a href=#fstatistics>F-statistics</a>, ANOVA)
+<li>In each file, select genes based on <a href=#fdr>FDR</a> and fold-change thresholds (default: FDR &le; 0.05
+and change &ge; 2 fold); FDR is calculated from ANOVA and it indicates the significance of gene expression
+change in all tissues or cell-types; fold change is calculated from highest and lowest expression in all tissues or cell-types
+<li>Find common genes that are selected for both files - these genes will be used for estimating correlations
+<li>Subtract median expression value (or other baseline value) in each row. User can select "control"
+as a baseline. Because all expression values are already log-transformed in ANOVA, the subtraction yields a logratio value
+<li>Take column <i>i</i> from the first matrix and estimate its correlation (Pearson or Spearman) with the column <i>j</i> in the
+second matrix. This correlation value is placed in column <i>i</i> and row <i>j</i> in the output table.
+</ol>
+All these steps are done automatically after you click on the button "Estimate correlation matrix".
+Before you start the task, specify the output file name and its description (edit suggested name).
+Because estimating correlations usually takes several minutes, an interruption web page appears
+where you need to check the status of your task.<p>
+
+If you check the box "Identify coregulated genes", then ExAtlas will identify lists of genes that
+are both upregulated or both downregulated in two data files if correlation is positive and 
+significant (z &ge; 2), and Expected Proportion of False Positives (<a href=../exatlas-help.html#epfp>EPFP</a>)
+is smaller than specified threshold (default threshold = 0.5).
+
+The algorithm for finding positively 
+coregulated genes is based on the analysis of data points in the positive quadrant (i.e. x&gt;0 and y&gt;0).
+Negatively coregulated genes are identified in the same way in the negative quadrant. First, logratios
+of gene expression change are all replaced by their rank. If null-hypothesis is true (no correlation)
+then the genes are expected to have a uniform random distribution in the positive quadrant (Fig. 11A).
+To estimate EPFP for a gene with rank rx in the first expression profile (file #1) and rank ry in the first 
+expression profile (file #2), we estimate the density of dots/genes in a rectangle with lower left corner at
+(rx,ry) coordinates (Fig. 11B, dark-shaded area) and compare it with the density of dots in two adjacent 
+rectangles to the left and down (light-shaded areas). EPFP equals the density of dots in the light-shaded
+divided (which serves as a baseline) by the density of dots in the dark-shaded area. Because we have two
+light-shaded rectangles, EPFP is estimated twice, and then we select the larger value (to be conservative
+in our assessment). Because EPFP may not monotonically decrease with increasing rank rx and ry, it is forced
+to decrease monotonically. In particular, if EPFP(rx1,ry1) &gt; EPFP(rx,ry), and rx1 &gt; rx, and 
+ry1 &gt; ry, then EPFP(rx1,ry1) is set equal to EPFP(rx,ry).
+
+<center><img src=images/epfp.bmp><p>
+Fig. 11. Estimating Expected Proportion of False Positives (<a href=../exatlas-help.html#epfp>EPFP</a>)
+for coregulated genes: (A) scatter-plot of gene expression rank in the positive quadrant if there is no 
+correlation. (B) The same plot if gene expression profiles are correlated, numbers indicate gene counts.
+The density of dots/genes in the dark-shaded rectangle, 130/(132+130)/(130+87)=0.002287, is compared with 
+the density of dots/genes in two light-shaded rectangles: 132/(132+130)/(132+651)=0.000643 and 
+87/(651+87)/(130+87)=0.000543. Two estimates of EPFP are generated for the gene at the low left corner of
+the dark shaded rectangle (with expression ranks rx=651+132=783 and ry=651+87=738): 
+EPFP1 = 0.000643/0.002287 = 0.281 and EPFP2 = 0.000543/0.002287 = 0.237. The greater value is 
+selected: EPFP = 0.281. (C) All coregulated genes with EPFP&le;0.3 are highlighted (magenta).</center><p>
+
+To identify oppositely coregulated genes (i.e. upregulation in file #1 associated with downregulation in 
+file #2 and vice versa), set "Direction of change (file #2)" to "Reversed" (Fig. 10). Then 
+gene expression change for File #2 is inverted (multiplied by -1).<p>
+
+<a name="output"><h3>3.9. Exploring the output file</h3></a>
+
+When the output table for correlation analysis is generated, results are saved in the output file,
+which is opened automatically. Output files can also be opened manually from the main menu 
+from the pull-down selection list (Fig. 2); after selecting file click the "Open" button. When 
+output screen is displayed (Fig. 12), then it can be used to
+plot the full output table as a heatmap (section #1) or to plot bar charts for rows and columns 
+of the output table (section #2). Examples of output graphs are shown in Fig. 13. When plotting the full table, select which values to plot.
+Plotting options depend on the type of analysis and generally include z-values, which indicate 
+the significance of correlation. In addition, correlation values and/or the number of 
+associated genes is provided. After you selected which table to plot, click the button 
+"Plot output table". You can also plot profiles for individual rows and columns of the 
+output table by selecting respective rows or columns in section #2 "Profiles of rows, 
+columns, and cells". Values are sorted in profiles from high to low because sorting is convenient
+for functional annotations of genes (e.g., Gene Ontology or pathways).<p>
+
+<center><img src=images/output_correl.bmp><p>
+Fig. 12. Open output file screen: results of correlation analysis.</center><p>
+
+<center><img src=images/correl_examples.bmp><p>
+Fig. 13. Example of correlation matrix (A) and profile for a single row/column (B).</center><p>
+
+<a name="geneset_enrich"><h3>3.10. Geneset enrichment analysis of up/down-regulated genes</h3></a>
+
+Geneset enrichment analysis is used to evaluate if specific genesets (such as Gene Ontology
+or KEGG pathways) are over-represented among upregulated and/or downregulated genes. The
+advantage of geneset enrichment analysis compared to a simple <a href=#geneset_open>overlap of 
+genesets</a> is that no thresholds are used for selecting differentially expressed genes.
+In particular, geneset enrichment analysis can find significant associations with functional
+genesets even if there are no significantly upregulated genes based on standard criteria
+(e.g., FRD $le; 0.05 and change &ge; 2 fold). Among various existing methods for geneset 
+enrichment analysis we use Parametric Analysis of Gene Enrichment (PAGE) (Kim & Volsky 2005, PMID:15941488)
+because of its simplicity and reliability (Zhang et al. 2010, PMID: 20092628). PAGE is based 
+on the comparison of the average expression change in a specific subset of genes, 
+<i>x</i><sub>set</sub>, with the average expression change in all genes, <i>x</i><sub>all</sub>:
+
+<table><tr><td width=180><td width=900>
+<i>z</i> = (<i>x</i><sub>set</sub> - <i>x</i><sub>all</sub>)*sqrt(<i>n</i><sub>set</sub>)/SD<sub>all</sub>,
+</table>
+
+where <i>n</i><sub>set</sub> is the size of the gene set and SD<sub>all</sub>
+is standard deviation of expression change among all genes. This method is modified here by 
+applying the equation to the subset of <i>N</i> top upregulated and another subset of N top 
+downregulated genes rather than to all genes combined (here we use <i>N</i> = 25% of all genes). 
+This modification allows one to detect enrichment of the same gene set among both upregulated 
+and downregulated genes. Upregulation or downregulation is estimated relative to the median
+expression of each gene or to a user-specified baseline (e.g., "control").
+The probability distribution of expression change within subsets of <i>N</i> upregulated or
+downregulated genes is not normal; however, because we compare averages for large
+sets of genes (usually, <i>n</i><sub>set</sub> &gt; 50), the probability distribution of these 
+averages is close to normal based on the central limit theorem. Thus, it is reasonable to use
+equation above as approximation.<p>
+
+<center><img src=images/geneset_page.bmp><p>
+Fig. 14. Screen for starting geneset enrichment analysis (PAGE)</center><p>
+
+To start PAGE analysis, select the geneset file using pull-down list (Fig. 14). To use
+geneset file for a different species, first select species. The screen will be reloaded with a 
+list of data for that species; after that select the geneset file.
+To identify associated genes (e.g., target genes with binding sites of transcription factor which
+at the same time responded to the induction or knockdown of the same transcription factor) check
+the box "Identify associated genes". Use EPFP threshold and fold change threshold to limit the 
+number of associated genes. Lower values of EPFP and higher values of fold change correspond 
+to more stringent filtering.<p>
+
+Viewing the output file is similar to that for <a href=#output>correlation analysis</a>. You can
+plot a matrix heatmap or profile for individual columns or rows. If associated genes were identified
+they will appear in the profile (as in Fig. 13B). If the list of genes is too long it is truncated.
+To see the full list of genes (Fig. 15A), click on the row header. In addition, at the end of the list
+you will find a <a href=#output>rankplot</a> that shows graphically the enrichments of genes that belong to the given
+geneset among either upregulated or downregulated genes (Fig. 15B).<p>
+
+<center><img src=images/output_geneset.bmp><p>
+Fig. 15. List of associated genes (A) and a <a href=#output>rankplot</a> (B).
+In this specific case, genes from geneset are enriched among both upregulated and
+downregulated genes, but more strongly - for upregulated genes.</center><p>
+
+<a name="geneset_make"><h3>3.11. Generate a file with differentially-expressed genesets</h3></a>
+
+ExAtlas automates the generation of genesets of upregulated and downregulated genes, which can
+be later used for comparison with other data sets. Expression of each gene is compared to the
+baseline expression, which can be selected as a median expression value (default) or expression 
+in some specific tissue/organ or cell line. Conditions of
+statistical significance are defined by FDR threshold and fold change threshold. Additional
+condition is gene specificity which allows to narrow down the list of genes to specific genes
+only. <a href=#specificity>Specificity</a> is measured by z-value, as explained in the <a href=#pairwise>pair-wise comparison</a>
+section. To select highly-specific genes use z-values &ge; 6. Before starting the task, don't forget
+to edit the name and description of the output geneset file, then click the button "Save 
+significant genes". When the task is finished, the output file displays a histogram of the number
+of significantly upregulated (orange) and downregulated (dark blue) genes (Fig. 16).<p>
+
+<center><img src=images/significant.bmp><p>
+Fig. 16. Histogram of the number of significantly upregulated (orange) and downregulated (dark blue) genes
+after the induction of various transcription factors in mouse ES cells.</center><p>
+
+<a name="geneset_open"><h3>3.12. Explore a geneset file and/or analyze gene overlaps with another file</h3></a>
+
+When you open a geneset file from the main menu (Fig. 2), a new window appears which allows the
+user to find a geneset with a specific name/description (use button "Search") or select a 
+geneset from the alphabetically ordered list of all genesets (use button "Display genes") (Fig. 17).
+The second portion of the menu is designed for starting the analysis of geneset 
+<a href=#overlap>overlap</a>. You can either select another geneset file and
+simply paste a list of genes into the provided text area. Then select parameters
+of statistical significance (FDR threshold and fold enrichment threshold) and click the button
+"Overlap analysis". The program identifies common genes for each pair of genesets from
+the first and second geneset files. And if the number of overlapping genes is greater than
+expected by random, then it uses hypergeometric distribution to evaluate the significance of
+gene enrichment. This is the traditional way of analyzing gene enrichment which is a simpler
+alternative to a more sophisticated PAGE method described <a href=#geneset_enrich>above</a>.<p>
+
+<center><img src=images/geneset_open.bmp><p>
+Fig. 17. Open geneset of targets of transcription factors in mouse ES cells.</center><p>
+
+When a specific geneset is selected, then the full list of member genes is displayed.
+From this screen you can test the significance of <a href=#overlap>overlap</a> with any other available geneset
+data, such as GO, KEGG, etc.<p>
+
+<a name=quality><h3>3.13. Evaluate quality of samples and remove low-quality samples</h3></a>
+
+Click the button "Data quality" near the bottom of the "Open expression profile" screen (Fig. 4) to 
+run quality control program. If the data file is large, the interruption screen (Fig. 3) may
+appear as discussed above. Quality control checks (a) correlation of log10-transformed expression
+of housekeeping genes with standard data (RNA-seq), and (b) consistency between
+replications. Consistency of replications is assessed by modified standard deviation (SD) of 
+the log-transformed expression in each sample from the tissue-specific median (where outliers with
+z > 3.5 are not used for estimating median). In general, SD < 0.1 means good quality, and
+SD > 0.3 means bad quality. Correlation of expression of housekeeping genes usually is in the
+range from 0.5 to 0.95. If it falls below 0.5, then the quality may be low. Checkboxes
+located near each sample allow the user to select samples with low quality for deletion.<p>
+ 
+<a name="upload"><h3>3.14. Upload files for analysis (formats, normalization, etc.)</h3></a>
+
+The "Upload data file" button in the main menu (Fig. 2) is used to open the screen for
+file upload (Fig. 18). You either browse for the file to be uploaded (button "Browse..") or paste the
+text file into the provided text area. Then, select the type of file (i.e., Gene expression 
+profile matrix, Gene set file, Samples file, List of geneset, Output file, or Annotation file).
+If you want to store the file under different name, type-in the file name in the "Rename file as:"
+field. Fill-out file description. If the file with gene expression profile table does not 
+include information on array platform, then you need to select array platform. 
+If the array platform is not present in the pull-down menu list, you need to upload a file with
+platform annotation which should include at least 3 columns: "probe ID", "gene symbol", and "gene name".
+You can add more columns that specify GenBank accession numbers, Entrez ID, or Unigene ID.
+If gene symbols or GenBank accession numbers are used as probe ID, then select "Gene symbols" or
+"public-genebank" platform annotation, respectively.<p>
+
+<center><img src=images/upload_screen.bmp><p>
+Fig. 18. Screen for uploading custom data files.</center><p>
+
+Here is a brief description of file formats.<br>
+The gene expression profile is a tab-delimited text that follows MIAME standards. All matrix
+files downloaded from GEO can be directly uploaded to ExAtlas. The file has header lines that
+start with "!" sign. However, these lines are optional. You can upload a file even without these
+lines if you specify platform for the gene expression profile file.
+Header lines are followed by a table with data lines that specify the intensity of feature
+signals. Here is an example of a gene expression profile matrix file:<p>
+
+<pre>
+!Series_title	"Gene expression of human soft tissue sarcoma"
+!Series_geo_accession	"GSE2719"
+!Series_pubmed_id	"15994966"
+!Series_summary	"Gene expression profiles of 39 human sarcoma samples (GSM 52571-GSM52609)..."
+!Series_type	"Expression profiling by array"
+!Series_platform_id	"GPL96"
+!Series_platform_taxid	"9606"
+!Series_sample_taxid	"9606"
+
+!Sample_title	"brain"	"stomach"	"colon"	"pancreas"	"prostate" ...
+!Sample_geo_accession	"GSM52556"	"GSM52557"	"GSM52558"	"GSM52559"	"GSM52560" ...
+!Sample_taxid_ch1	"9606"	"9606"	"9606"	"9606"	"9606" ...
+!Sample_data_row_count	"22283"	"22283"	"22283"	"22283"	"22283" ...
+!series_matrix_table_begin
+"ID_REF"	"GSM52556"	"GSM52557"	"GSM52558"	"GSM52559"	"GSM52560" ...
+"1007_s_at"	2867.1	1780.8	1921.8	2486.1	4151.4	...
+"1053_at"	216.4	196.8	145.3	127.1	109.7	...
+"117_at"	135	121	157.2	162.6	267.8	...
+"121_at"	916.1	1075.7	922	2192.9	1198.8	...
+"1255_g_at"	149.8	35.5	32.7	96.3	47.6	...
+..................................................................
+!series_matrix_table_end
+</pre><p>
+
+Sample names are taken from the line "!Sample_title" or from the line of column headers that follows 
+after "!series_matrix_table_begin". Column headers for replication samples should be exactly matching
+(case-sensitive). It is not required to reorder columns so that all replications are placed together;
+replicetion samples are recognized by column headres even if they are separated by other samples in
+the table. ExAtlas can process 2-dye arrays that use reference RNA consistently as one of the 
+channels (e.g., Cy5 or Cy3). In this case, two columns that correspond to the same array (channel #1 
+and channel #2) should be placed together and the column representing reference RNA should be named
+"reference". If data are log-transformed or Z-value transformed, then select transformation type from
+the pull-down menu.<p>
+Because background subtractions may result in negative values, some array scanning programs avoid
+negatives by adding some constant value to signal intensity (e.g., 50 or 100). Usually this does not cause problems,
+but low-expressed genes may show weaker expression fold-change. If you would like to remove this
+constant value, then select "adjustment" value from the pull-down menu.<p>
+
+After you upload a new gene expression profile it will appear in the main menu.
+When you try to open it for the first time, it will run ANOVA (which may take some time).<p>
+
+Alternatively you can compile gene expression data column-by-column from one or multiple tab-delimited
+text tables. To use this option, select "Compile expression profile" option from the
+pull-down list "Select file type:". Type-in file name in the field "Rename file as" and
+description. Select array platform if applicable, then browse to select the first data 
+table and click "Upload" button. 
+After the table is parsed and column headers displayed on the screen,
+select columns to be extracted, specify their usage (Probe ID/tracking ID, Gene ID/name,
+or Gene expression), and possibly edit column header. 
+If you have specified array platform, use column with probe ID as "Probe/tracking ID".
+Alternatively, select a column as Gene ID/name if it has gene symbols, GenBank acc., 
+Entrez gene ID, or Ensembl gene ID. Please, edit column headers as 'symbol', 'refseq', 'genbank', 'entrez', 
+or 'ensembl'. Probe/tracking ID or Gene ID/name 
+should be common for all data files that are assembled together. When these data are uploaded, 
+you can choose another data table and extract data from it until all data are compiled.
+It is necessary to specify Gene ID/name at least in one of the tables. For example you
+can upload an annotation table where both Probe ID/tracking ID and Gene ID/name are
+present. At any time you can edit sample names to make them meaningful and ensure that
+replications have exactly the same sample names (case-sensitive). If you have 2-dye arrays 
+and one channel is used for reference RNA, then edit column name as 'reference'. In this case
+reference expression will be used for normalization as follows: norm(<i>x</i>) = <i>x*My/y</i>, where <i>x</i> is
+signal intensity for sample, <i>y</i> is signal intensity for reference, and <i>My</i> is geometric mean 
+of all reference values.<p>
+
+In a geneset data file (tab-delimited text), each line corresponds to one geneset. 
+First item is geneset ID, the second is geneset description (which may be blank or duplicate ID),
+followed by all genes that belong to this geneset. Because
+some lines are rather long, geneset files may not always be opened in Excel. 
+Geneset file may include header lines that all start with "!". Here is example of a geneset file:<p>
+
+<pre>
+CITRATE_CYCLE_TCA_CYCLE	CITRATE_CYCLE_TCA_CYCLE	Idh3g	Pdha2	Fh1	Suclg1	Idh2	Pcx	Pdha1	Idh3b	Sucla2	Mdh1	Suclg2 ...
+ETHER_LIPID_METABOLISM	ETHER_LIPID_METABOLISM	Pla2g4e	Pla2g7	Pla2g12a	Pla2g4a	Lpcat4	Agps	Pafah2	Pla2g3	Pla2g2f	Ppap2a ...
+..........................................................................................................
+</pre>
+
+An alternative acceptable format of geneset files uses comma-separated lists of gene symbols:<p>
+
+<pre>
+CITRATE_CYCLE_TCA_CYCLE	CITRATE_CYCLE_TCA_CYCLE	Idh3g,Pdha2,Fh1,Suclg1,Idh2,Pcx,Pdha1,Idh3b,Sucla2,Mdh1,Suclg2,...
+ETHER_LIPID_METABOLISM	ETHER_LIPID_METABOLISM	Pla2g4e,Pla2g7,Pla2g12a,Pla2g4a,Lpcat4,Agps,Pafah2,Pla2g3,Pla2g2f,Ppap2a,...
+..........................................................................................................
+</pre>
+
+Sample files (tab-delimited text) have 4 columns:
+(1) series ID from GEO, (2) Platform ID, (3) Sample ID, and (4) sample title/name. Samples
+with identical titles within the same data series are considered as replications. Check title
+spelling, spaces, and character case, because in the case of mismatch replications will not be
+recognized. Example:
+
+<pre>
+GSE6290	GPL1261	GSM144590	renal corpuscle
+GSE6290	GPL1261	GSM144591	renal corpuscle
+GSE6290	GPL1261	GSM144594	Early Proximal Tubule
+GSE6290	GPL1261	GSM144595	Early Proximal Tubule
+GSE6290	GPL1261	GSM144596	Medullary Collecting Duct
+GSE6290	GPL1261	GSM144597	Medullary Collecting Duct
+GSE6290	GPL1261	GSM144603	sshaped_body
+GSE6290	GPL1261	GSM144604	sshaped_body
+GSE6290	GPL1261	GSM144605	sshaped_body
+............................................................
+</pre>
+
+Annotation file has at least 3 columns: (1) Probe ID, (2) Gene symbol, and (3) Gene
+name. Additional columns may show accession number, Entrez, Ensembl, Unigene or other IDs.
+Do not use multiple gene symbols in the second coumn! If a probe matches to multiple symbols
+then select the best symbol for annotation. If you need to show other matching gene symbols,
+then make multiple copies of the line with this probe ID in the gene expression profile data
+and modify probe ID (enter unique new ID) which will be associated with alternative symbols.
+Annotation file always has a line with column headers and may include optional header lines 
+that start with "!".<p> 
+
+<pre>
+NIA-oligo	Gene symbol	Gene name	GenBank	Entrez
+Z00000225-1	Wdr74	WD repeat domain 74	NM_134139.1,NM_134139.1	107071
+Z00000233-1	Tro	trophinin	NM_001002272.2,NM_001002272.2	56191
+Z00000238-1	Edf1	endothelial differentiation-related factor 1	NM_021519.1,NM_021519.1	59022
+Z00000241-1	Pfn1	profilin 1	NM_011072.2,NM_011072.2	18643
+Z00000244-1	Rabep1	rabaptin, RAB GTPase binding effector protein 1	AK163126.1,AK163126.1	54189
+.........................................................................
+</pre>
+
+Output files may include one or several tab-delimited tables. When you perform any
+analysis in ExAtlas (correlation, gene enrichment, significant genes, etc.) you can
+then download the output file to explore its format. Any tab-delimited table with first line
+of column headers and with the first column as row headers can be uploaded as output file 
+for plotting as a heatmap. No additional formatting is needed.<p>
+
+Lists of genes (official gene symbols) can be uploaded to explore the enrichment of
+various genesets for functional annotations (e.g., for comparison with GO-terms, KEGG pathways).
+Genes can be formatted in one column or pasted as comma-separated text.
+After the list of genes is uploaded, select the geneset file for comparison (e.g.,
+GO_mouse_geneset), specify parameters (FDR and fold enrichment) and click "Enrichment analysis".
+When the output opens, click on the button "Get profile".<p>
+
+<a name=edit_file><h3>3.15. Edit files</h3></a>
+
+ExAtlas supports minor editing of uploaded files (except platform annotations). If you made
+a mistake during file upload, you can fix it using the editing tool. In particular, users can
+rename the file, edit its annotation, or specify a different microarray platform for gene 
+expression profiles. More editing options are available for gene expression profiles and 
+geneset files. In particular, users can select gene expression profiles (e.g., microarray samples)
+or genesets and either delete them or copy to another file. If gene expression profiles are
+copied to already existing file, then the user can select to co-normalize data in various
+ways: (a) by quantile method, (b) by equalizing global median values for each gene, or (c) by 
+equalizing median values for selected samples within each data set. For example, if two projects
+have data on gene expression profiles in normal liver, then the user can select all liver samples
+in each data set and then use option (c). Options (b) and (c) represent batch-normalization
+procedure which is often used for combining heterogeneous data sets. Because batch-normalization
+generates better results than quantile method, we suggest not to combine different data series
+from GEO in "<a href=#searchGEO>Search GEO database</a>" option, but to save each series
+separately and later combine them using batch-normalization.<p>
+
+<a name=practice><h3>3.16. Practice session</h3></a>
+
+<ol>
+<li>Search on Google for "ExAtlas"; log in as guest (click the button or 
+type "guest" in the login box).
+<li>Open expression profile data set: public-GNFv3_mouse_tissues. Set fold change threshold 
+to 4 and click "Make a heatmap". Select "liver" column and assign it to move before "kidney" 
+column; also change "Maximum value" to 2.5. Then click the "Re-plot the matrix" button.
+<li>Save heatmap "Matrix file" in your "practice" folder. Open the file in Excel to see 
+genes associated with each tissue.
+<li>Close the heatmap and click on "PCA" button (you may select "show replications" option). 
+If you have VRML plug-in, view the PCA in 3D. Click on the positive PC1-associated cluster 
+to see the list of genes. Find over-represented GO-annotations in this list of genes. Use 
+other genesets: KEGG patheways and MGI phenotypes for functional annotations of genes.
+<li>Do pair-wise comparison of prefrontal_cerebral_cortex with cerebral_cortex, click on 
+individual genes to see their profiles. Display the list of over-expressed genes and do 
+functional annotations (GO, KEGG).
+<li>Search for specific genes (e.g., Acer1, Foxl2, Gata3, Sox2). Find genes with similar 
+expression profiles. Do functional annotations of these genes.
+<li>Open expression profile data set: public-NIA_induction_137TFs_mouse. Push button 
+"Correlation" to start correlation analysis of this data set and GNF ver.3 data on expression 
+profiles in mouse tissues/organs. Set fold change threshold 1.5 for TF induction data 
+and 2 for GNF data. Select ES cells as a background for GNF and median expression for 
+TF induction. Start the analysis, check the status of the job in the log file. When the 
+correlation matrix is ready, display it. Download the resulting correlation matrix as text file
+and open it in Excel.
+<li>Push button "Significant genes" to generate a geneset file with significantly 
+up-regulated and down-regulated genes. You may select a certain <a href=#specificity>specificity</a>
+level (e.g., 4 or 7). When results are ready, estimate the <a href=#overlap>overlap</a> with GO-annotations data.
+<li>Click "Find samples in GEO" in the main menu. Type in a search term (e.g., kidney, 
+pancreas, skin, brain cortex) and start selecting samples from various data sets. 
+The idea is to find differenbces between cell types or developmental stages of each 
+organ. Add other tissues for a background (e.g., from the GNF database). Save samples.
+<li>Edit sample names so that replications have identical names (case sensitive). 
+Generate the data file with gene expression profiles. Open the file and check the 
+quality of data. Delete low-quality data. Reanalyze the data and plot the heatmap 
+and PCA.
+</ol>
+
+<h3><a name=terms>4. List of terms</a></h3>
+
+<dl>
+<dt><b><a name="anova1">ANOVA</b>
+<dd>is ANalysis Of VAriances, a statistical technique for detecting 
+<a href="#significance">statistical significance</a>. The major advantage 
+of ANOVA versus a simple t-test is that
+variances are averaged over all factor levels, 
+thus the statistics become more stable. In ANOVA we calculate the <a href="#fstatistics">F-statistics</a>
+which is then used to estimate P-value and determine if the
+variation between means is significant. Testing multiple
+hypotheses with ANOVA (as in the case of <a href="#microarray">microarray</a> data) requires
+some modifications in ANOVA: <a href="#variance">variance averaging</a>, and <a href="#fdr">FDR</a>.
+
+<dt><b><a name="array_annot">Array annotation</b>
+<dd>is a file with probes (or clones) in the microarray with annotations.
+The file is a tab-delimited text file with headers in the first row.
+The following three columns are required:
+The first column is probe ID (oligo ID), which should match to the 
+gene ID in the data file that you analyze. Gene ID can be either a number or a word.
+The second column is gene symbol. The third column is gene annotation.
+The file may have additional columns if necessary (e.g., gene bank 
+accession number, Unigene, Ensembl, Entrez, MGI, etc.). These columns should have 
+headers to be displayed in all tables.
+
+<dt><b><a name="biplot">Biplot</b>
+<dd>was proposed by Gabriel (1971. Biometrika 58: 453-467). This is a method for
+plotting together rows and columns of the data matrix, which can be used for
+examining associations between genes (rows) and tissues/experiments (columns). The
+technique is based on the Singular Value Decomposition (SVD) method.<br>
+<u>Web references:</u><br>
+<a href=http://public.lanl.gov/mewall/kluwer2002.html>SVD and PCA for microarrays</a><br>
+<a href=http://www.jstatsoft.org/v07/i05/BIPLOT_paper_6_6_02.pdf>Biplot and SVD</a>
+
+<dt><b><a name="cluster">Clustering</b>
+<dd>In ExAtlas, three methods of clustering are implemented: (1) hierarchical clustering
+and (2) "diagonal" clustering, and (3) <a href="#pca">PCA</a>-based clustering. Hierarchical
+clustering is applied to genes and/or tissues/samples with distance matrix and average linking.
+"Diagonal" clustering is designed for plotting sparse matrices. It attempts to place
+high values near the diagonal by permutation of rows and columns. PCA-based clustering is
+done as follows: gene is associated with a specific principal component (PC) based on
+highest correlation, and if the change of gene expression along the PC 
+(see figure below) is greater than selected fold change threshold.<br>
+<img src=images/logratio.gif><br>
+Two clusters of genes are identified with each principal component: those that are positively
+and negatively correlated with PC.
+
+<dt><b><a name="epfp">EPFP (Expected Proportion of False Positives)</b>
+<dd>Expected Proportion of False Positives is applied in ExAtlas to the sets of genes associated
+with two different properties (e.g., coregulated in different tissues, or being targets of
+transcription factors, and in addition, activated by these transcription factors). EPFP
+is inverse to the enrichment ratio as compared to the null hypothesis of no association between
+examined properties. It indicates, what proportion of false positives to expect in the set of
+genes which we consider as significantly associated with two different properties.
+
+<dt><b><a name="error model">Error model</b>
+<dd>is the model of error variance used in <a href="#anova1">ANOVA</a> for 
+determining <a href="#significance">statistical significance</a> of differential 
+<a href="#variance">gene expression</a>. The error model attempts to
+get a better estimate for the true error variance than the <a href="#errorvariance">error variance</a>
+estimated from data (we call it 'actual error variance'). In ExAtlas we use the 
+maximum of actual error variance and error variance averaged across 500 genes with similar
+average expression. This error model was proposed in the NIA Array Analysis software
+and was shown to reduce the number of false positives.
+
+<dt><b><a name="errorvariance">Error variance</b>
+<dd>is the variance of <a href="#replications">replications</a> within groups. It is estimated as the
+sum of square differences between data and corresponding group means.
+Error variance can be used directly in <a href="#anova1">ANOVA</a> or indirectly via
+<a href="#error model">error model and <a href="#variance">variance</a> averaging.
+
+<dt><b><a name="fdr">FDR (false discovery rate)</b>
+<dd>is the proportion of false positives among all genes that we consider 
+significant. FDR can be viewed as an equivalent of a P-value in experiments with multiple hypotheses testing.
+In <a href="#microarray">microarray</a> experiments we test simultaneously null-hypotheses for all genes.
+If there are 20000 genes on a chip, then by using P-value=0.05 we will consider 
+5% genes significant even if null-hypotheses are true for all genes (i.e., no
+differential expression). It means that we will get 1000 false positives!
+This example shows that P-value is meaningless for multiple hypotheses testing.
+A possible solution of the problem is to use Bonferroni correction by multiplying
+P-value by the total number of genes. This method ensures no false positives
+with probability of 95%; however it is too stringent because we can tolerate
+some small proportion of false positives. FDR is an intermediate method between the
+P-value and Bonferroni correction; it is equal to the proportion of false positives
+among all genes that we consider significant. The equation is
+
+<center><img src=images/eqfdr.gif></center>
+
+where r is the rank of a gene ordered by increasing p-values, p<sub>i</sub> is the 
+p-value for gene with rank i, and N is the total number of genes tested
+(Benjamini, Y. & Hochberg, Y., 1995. J Roy Stat Soc B 57: 289-300)
+The FDR value increases monotonously with increasing p-value.
+(or decreasing t-statistics or <a href="#fstatistics">F-statistics</a>).
+ 
+<dt><b><a name="fstatistics">F-statistics</b>
+<dd>is a ratio of factor variance to the <a href="#errorvariance">error variance</a> in <a href="#anova1">ANOVA</a>. F-statistics
+is then used to estimate the P-value according to theoretical F-distribution.
+The P-value is then used for determining if the variation between means is 
+significant. If multiple hypotheses are tested, then <a href="#fdr">FDR</a> is estimated from
+P-values.
+
+<dt><b><a name="expression">Gene expression</b>
+<dd>is the intensity of transcription (mRNA synthesis from DNA template) in a cell.
+Gene expression profile is the data on expression of all genes (or majority of genes)
+in the genome. It is also called "global gene expression profile". Each cell type
+or tissue has its specific gene expression profile, which is measured either by 
+<a href="#microarray">microarrays</a> or with high-throughput sequencing (RNA-seq).
+
+<dt><b><a name="microarray">Microarray</b>
+<dd>is a slide with numerous probes that represent various genes of 
+some biological species. Probes are either oligo-nucleotides that range in 
+length from 25 to 60 bases or cDNA clones. The quality of data from cDNA arrays is usually
+low because cDNA often include non-specific regions. Thus, cDNA arrays are excluded from
+ExAtlas search. Microarrays are hybridized with labeled cDNA synthesized 
+from a mRNA-sample of some tissue. The intensity of label (radioactive or 
+fluorescent) of each spot on a microarray indicates the <a href="#expression">expression</a> of each 
+gene. One-color arrays show the absolute expression level of each gene. Two-color arrays 
+can indicate relative expression level of the same gene in two samples that are labeled with different
+colors and mixed before hybridization. One of these samples can be a <a href="#reference">universal
+reference</a> which helps to compare samples that were hybridized on different arrays.
+
+<dt><b><a name="organism">Organism species</b>
+<dd>ExAtlas supports the analysis of the following 32 species: human, mouse, rat, rhesus monkey, macaque,
+chimpanzee, dog, sheep, pig, cow, horse, rabbit, chicken, turkey, xenopus frog, zebrafish, rainbow trout,
+salmon, fruit fly, nematode, thale cress, rice, soybean, tomato, maize, yeast (2 species), salmonella, 
+bacteria (5 species). However, public data sets are currently available for for human, mouse, and rat.
+Organism species have to be selected from the main menu in ExAtlas before you start any analysis
+in order to avoid confusion of combining incompatible data on different species.
+
+<dt><b><a name="outliers">Outliers</b>
+<dd>are data that are suspiciously different from other data from the same experiment.
+Outliers can be detected using the <a href="#zvalue">z-value</a>: z=|x-Mean|/SD, where x in the tested value,
+Mean is the mean value for the same experiment, and SD is standard deviation from
+mean. In ANOVA, SD is calculated as a square root from mean square error (NSE). Values
+with high z-values can be outliers. How to determine what z-value to select for outlier
+removal? The answer depends on the volume of data. If you analyze 22000 genes with
+12 1-color arrays, then you have 264000 numbers. Assuming no real outliers, the highest
+z-value is expected to be 4.6. To be sure that you remove real outliers you need to
+select the value z somewhat higher than 4.6, for example z=6 or z=8. If you think the
+data have problems you may want to remove more outliers by reducing the z-value. If you
+don't want to remove any outliers, select z=10000. Removing outliers means replacing
+them with missing values.
+
+<dt><b><a name="overlap">Overlap analysis</b>
+<dd>A common way to annotate a set of genes (e.g., significantly upregulated or downregulated) 
+is to compare it with already available annotated gene sets, e.g., Gene Ontology (GO). If the
+number of common (=overlapping) genes is greater than expected by random, then a hypergeometric 
+distribution is used to evaluate the significance of gene overlap: 
+z = (q-p)/sqrt[sqrt(p*(1-p)*(N-n)/(N-1)/n)], 
+where z = <a href="#zvalue">z-value</a>; p = number of genes in the annotated set, n, divided by the total number of 
+annotated genes, N; and q = number of overlapping genes divided by the number of genes in your initial
+set. See also section <a href=#geneset_open">3.12.</a>.
+
+<dt><b><a name="pca">PCA</b>
+<dd>Principal Component Analysis (PCA) is a multivariate analysis technique which finds
+major patterns in data variability. In mathematical terms, it is finding eigenvalues and
+corresponding eigenvectors (=principal components, PC). Most important are first few principal
+components that explain most of observed variance; the rest of them are mostly random
+fluctuations. Thus, by plotting data versus first 2 or 3 PC we can reduce dimensionality
+of the data without much loss of information. Singular Value Decomposition (SVD) is a more
+generic method than PCA which identifies eigenvectors both for the rows (=genes) and columns (=tissues) of the
+data matrix. In fact, both gene-points and tissue-points can be plotted on the same graph
+using technique called "biplot" which is implemented in our software.
+
+<dt><b><a name="rankplot">Rankplot (rank-plot)</b>
+<dd>It is used to show graphically the enrichments of genes that belong to the given geneset
+among either upregulated or downregulated genes (see Fig. 15B). First, genes are sorted according
+to their expression change (e.g., after manipulation of transcription factor), then the proportion
+of genes from the geneset (e.g., geneset of target genes with binding site[s] of transcription
+factor) are estimated in a sliding window (e.g. N = 300-500 genes).
+
+<dt><b><a name="replication">Replication</b>
+<dd>is an independent repeat of an experiment. Biological replicates should be truly
+independent. For example, shRNA experiments should use different shRNA sequences as
+replications. Transgenic clones should be derived independently and used as replications.
+In practice it may be difficult to achieve absolute independence of replicates, but it is 
+very important to reduce dependency between replicates to a minimum. For example, it is better to
+take samples from different animals than from the same animal, unless you are
+interested in a particular animal. If sample preparation requires multiple
+steps, it is best if samples are separated from the very beginning, rather
+than from some intermediate step.
+
+<dt><b><a name="specificity">Specificity of genes</b>
+<dd>Gene specificity is characterized by <a href="#zvalue">z-value</a> which is estimated 
+by comparing log-expression in a given tissue (<i>mi</i>)
+with average log-expression in other tissues (<i>M</i>) that are not correlated with tissue <i>i</i>:
+<i>z</i> = |<i>mi - M</i>| / <i>SD</i>, where <i>SD</i> is standard deviation of gene expression in other tissues, used for estimating <i>M</i>.
+Tissue is considered correlated with given tissue <i>i</i> if the multi-dimensional distance to
+tissue <i>i</i> is &lt;1/3*(maximum distance between tissues). Low specificity corresponds to
+z-values below 3. High specificity corresponds to z-values above 6.
+
+<dt><b><a name="significance">Statistical significance</b>
+<dd>means rejection of a null-hypothesis, H0, that two samples
+have the same probability distribution. H0 is tested using some
+statistics (e.g., t or F); if its value appears in the tail of the theoretical
+probability distribution for this statistics, and hence, the likelihood of the H0
+drops below some threshold (usually P=0.05), then we consider the difference
+between 2 samples significant. This does not guarantee that the H0 was indeed 
+false. A case, where H0 true but we consider the difference between means 
+statistically significant, is called "false positive". If we did not detect
+significant differences but H0 was false, then it is called "false negative".
+When multiple hypotheses are tested, the meaning of statistical significance
+becomes more complicated (see <a href="#fdr">FDR</a>).
+
+<dt><b><a name="reference">Universal reference</b>
+<dd>is a mixture of cDNA that represent (almost) all genes of a species, and
+their relative abundance is standardized. Universal reference is synthesized
+from mRNA of various tissues. Universal reference can be used as a second
+sample for hybridization on 2-color <a href="#microarray">microarrays</a>. Then all 
+other samples become comparable via the universal reference.
+
+<dt><b><a name="variance">Variance averaging</b>
+<dd>is averaging the <a href="#errorvariance">error variance</a> for genes with similar average expression
+level (=intensity). Variance averaging is a method for stabilizing t- or <a href="#fstatistics">F-statistics</a>
+in <a href="#microarray">microarray</a> experiments with a small number of <a href="#replication">replications</a>. Error variance often
+depends on the average intensity of genes (usually it increases as intensity 
+decreases). Thus, variance should be averaged only for genes with similar intensity.
+First genes are sorted according to their average intensity, and then the average error
+variance is estimated in a sliding window of 500 or 1000 genes. We do not recommend
+to reduce the size of sliding window below 500. Some genes may have
+unusually high error variance because of outlier values. To avoid the effect of these
+genes on the averaged error variance, it is better to remove 1% or 5% top values
+of error variances before averaging. Average error variance can be used in
+<a href="#anova1">ANOVA</a> instead of the actual error variance, or it can be combined with the actual
+error variance according to <a href="#errormodel">error model</a>.
+
+<dt><b><a name="vrml">VRML</b>
+<dd>stands for Virtual Reality Markup Language. It is an object-oriented language for
+describing 3D objects. To view the image you need a VRML viewer (e.g.,
+<a href=http://freewrl.sourceforge.net>FreeWRL</a> or
+<a href=http://www.cortona3d.com>Cortona3d</a>.
+Web resources: <a href=https://web3d.vapourtech.com/>Floppy's Web 3D</a>, 
+<a href=https://www.web3d.org/>Web 3D Consortium</a>
+
+<dt><b><a name="zvalue">Z-value</b>
+<dd>Z-value is a deviation from the mean in the standard normal distribution. It is the same
+as t-statistics if the number of degrees of freedom is sufficiently large. P-values can be
+estimated from z-values as follows: p = 2*(1 - cnd(|z|)), where cnd = cumulative nurmal 
+distribution. Then p-values can be used to estimate <a href="#fdr">FDR</a>.
+</dl>
+
+<h3><a name=disclaimer>5. Disclaimer: terms of use</a></h3>
+
+This software is provided "AS IS".  NIA makes no warranties, expressed
+or implied, including no representation or warranty with respect to
+the performance of the software and derivatives or their safety,
+effectiveness, or commercial viability.  NIA does not warrant the
+merchantability or fitness of the software and derivatives for any
+particular purpose, or that they may be exploited without infringing
+the copyrights, patent rights or property rights of others. NIA shall
+not be liable for any claim, demand or action for any loss, harm,
+illness or other damage or injury arising from access to or use of the
+software or associated information, including without limitation any
+direct, indirect, incidental, exemplary, special or consequential
+damages.<p>
+
+<b>Feedback</b><br>
+Contact Alexei Sharov <a href=mailto:sharoval@mail.nih.gov>sharoval@mail.nih.gov</a> 
+if you have problems with ExAtlas or suggestions for improvement.<p>
+
+</BODY>
+</HTML>
+
+
+

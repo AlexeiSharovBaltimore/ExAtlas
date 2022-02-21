@@ -1,0 +1,138 @@
+<HTML><HEAD>
+<descr><meta name="Description" content="ExAtlas: Tool for meta-analysis of gene expression data"></descr>
+<keyword><meta name="Keywords" content="gene expression, meta-analysis, correlation, statistics, matrix, transcription factors, tissue-specific"></keyword>
+<TITLE>ExAtlas</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function date_ddmmmyy(date){
+  var d = date.getDate();
+  var m = date.getMonth() + 1;
+  var y = date.getYear();
+  if(y >= 2000){ y -= 2000; }
+  if(y >= 100){  y -= 100;  }
+  var mmm = 
+    ( 1==m)?'Jan':( 2==m)?'Feb':(3==m)?'Mar':
+    ( 4==m)?'Apr':( 5==m)?'May':(6==m)?'Jun':
+    ( 7==m)?'Jul':( 8==m)?'Aug':(9==m)?'Sep':
+    (10==m)?'Oct':(11==m)?'Nov':'Dec';
+  return "" + mmm + " " +
+    (d<10?"0"+d:d) + " - " +    
+    (y<10?"0"+y:y);
+}
+function date_lastmodified(){
+  var lmd = document.lastModified;
+  var s   = "Unknown";
+  var d1;
+  if(0 != (d1=Date.parse(lmd))){
+    s = "" + date_ddmmmyy(new Date(d1));
+  }
+  return s;
+}
+function update_date(){
+	document.DocForm.DocDate.value = date_lastmodified();
+}
+function start_using(){
+	document.login_form.loginname.value = "guest";
+	document.login_form.submit();
+}
+function user_login(){
+	var y = new String(document.login_form.loginname.value);
+	if(!y || y.length<5 || y.length>20){
+		alert("You need to enter login name (from 5 to 20 characters)");
+		return false;
+	}
+	if(y=="guest"||y=="Guest"||y=="GUEST"){
+		document.login_form.submit();
+	}
+	if(y.search(/^[+\w@.\-]+$/)<0){
+		alert("Login name should not include special characters or spaces");
+		return(false);
+	}
+	var x = new String(document.login_form.passwd.value);
+	if(!x || x.length<5 || x.length>20){
+		alert("You need to enter password (from 5 to 20 characters)");
+		return false;
+	}
+	document.login_form.submit();
+}
+<!-- end script --></SCRIPT></HEAD>
+<BODY BGCOLOR=white onLoad=update_date();>
+<TABLE BGCOLOR=black>
+<TR><TD WIDTH=168 background=images/head3.gif><IMG SRC=images/head1.jpg></A></TD>
+<TD WIDTH=678 background=images/head4.gif ALIGN=CENTER><IMG SRC="images/head2.gif" BORDER=0 ALT="ExAtlas: Tool for meta-analysis of gene expression data" useMap=#mapHead2></TD></TR>
+<map NAME='mapHead1'>
+<area shape="rect" href=https://www.nih.gov coords="0,0,82,50">
+<area shape="rect" href=https://www.irp.nia.nih.gov coords="83,0,167,50">
+<area shape="rect" href=https://www.irp.nia.nih.gov coords="0,51,167,86">
+</map>
+<map NAME='mapHead2'>
+<area shape="rect" href=index.html coords="0,0,677,80">
+</map>
+
+<TR><TD VALIGN=TOP BGCOLOR=white>
+<TABLE border=0>
+<TR><TD COLSPAN=2><A HREF=index.html><IMG SRC="images/dot.gif" BORDER=0><font size=3 color=purple>ExAtlas</a></td></tr>
+<TR><TD WIDTH=25><td><A HREF=exatlas-help.html><font size=2>Overview, Help</a></td></tr>
+<TR><TD WIDTH=25><td><A HREF=download.html><font size=2>Download</a></td></tr>
+<TR><TD COLSPAN=2><IMG SRC="images/dot.gif" BORDER=0><font size=4 color=purple>Software/Database</td></tr>
+<TR><TD WIDTH=25><td><A HREF=https://lgsun.irp.nia.nih.gov/ANOVA><font size=2>Array Analysis</a></td></tr>
+<TR><TD WIDTH=25><td><A HREF=https://lgsun.irp.nia.nih.gov/geneindex><font size=2>Gene Index</a></td></tr>
+<TR><TD WIDTH=25><td><A HREF=https://lgsun.irp.nia.nih.gov/geneindex/cisview.html><font size=2>CisView</a></td></tr>
+<TR><TD WIDTH=25><td><A HREF=https://lgsun.irp.nia.nih.gov/CisFinder><font size=2>CisFinder</a></td></tr>
+</TR></TABLE></td>
+
+<TD WIDTH=678 VALIGN=TOP BGCOLOR=white>
+
+<TABLE border=0>
+<TR><TD WIDTH=15><TD><H3>Description of ExAtlas</h3>
+ExAtlas is a tool for <b>meta-analysis of gene expression data</b>. In contrast to other
+software, it compares <b>multi-component data sets</b> and generates results for all
+combinations (e.g., all gene expression profiles vs. all GO annotations). Main functions are:
+(1) standard meta-analysis (fixed and random effects, z-score, Fisher's method; analysis of
+(2) global correlations between gene expression data sets;
+(3) gene set enrichment;
+(4) gene set overlap;
+(5) gene association (Expected Proportion of False Positives, EPFP);
+(6) statistical analysis of gene expression (ANOVA, PCA, FDR).
+Results are presented graphically as heatmaps, bar-charts, or 3-D images (PCA).
+Gene expression data is extracted automatically from GEO/NCBI database. Several most popular 
+public data sets (e.g., GNF, Gene Ontology, KEGG, GAD phenotypes)
+are pre-loaded and can be used for functional annotations.<br>
+HELP: <a href=exatlas-help.html TARGET="_blank2243">A guide to ExAtlas</a>.<br>
+NOTE: The error message "Operation failed!" means a suspicious command or data. Please send a message
+to <a href=mailto:sharoval@mail.nih.gov>administrator</a> and explain the problem.<p>
+
+<FORM NAME=login_form method="post" action="bin/exatlas.cgi">
+<INPUT TYPE=button onClick=start_using(); VALUE="     S T A R T        U S I N G       E X A T L A S   (as guest)    "><p>
+
+To get an account, <a href=registrationExAtlas.html>register here</a> (free).<br>
+You can also log in as "guest" to have full functionality in one session.<br>
+The advantage of <a href=registrationExAtlas.html>registration</a> is that you can keep
+your data and results on the server.<p>
+
+<TABLE border=0>
+<TR><TD><b>Login to ExAtlas:</b>
+<TABLE border=0>
+<TR><TD width=100><i>User login:<TD><input name="loginname" style=width:200px;>
+<TR><TD width=100><i>Password:<TD><input type="password" name="passwd" style=width:200px;>
+<INPUT TYPE=button onClick=user_login(); value=" Login ">
+<INPUT type=hidden name=login value="login">
+</TABLE>
+<TD WIDTH=100><TD><a href=exatlas-help.html>ExAtlas help and tutorial<br>
+<img src=images/thumb_flowchart.gif></a>
+</TABLE></FORM><p>
+<b>How to cite ExAtlas:</b> Sharov, A.A., Schlessinger, D., and Ko, M.S.H. 2015. Exatlas: An 
+interactive online tool for meta-analysis of gene expression data.
+J. Bioinform. Comput. Biol., <a href=http://www.worldscientific.com/doi/abs/10.1142/S0219720015500195>DOI: 10.1142/S0219720015500195</a>.<p>
+
+<i>Please report any problems to <a href=mailto:sharoval@mail.nih.gov>webmaster</a><p>
+</TD></TR></TABLE>
+<FORM NAME=DocForm>&nbsp; &nbsp; Last modified: &nbsp; <INPUT NAME=DocDate VALUE="" SIZE=12>
+</FORM>
+</TABLE>
+</BOYD></HTML>
+
+
+
+
+
