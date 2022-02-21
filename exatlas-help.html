@@ -3,14 +3,8 @@
 <TABLE BGCOLOR=black>
 <TR><TD WIDTH=168 background=images/head3.gif><IMG SRC=images/head1.jpg></A></TD>
 <TD WIDTH=678 background=images/head4.gif ALIGN=CENTER><IMG SRC="images/head2.gif" BORDER=0 ALT="ExAtlas: Meta-analysis of gene expression data" useMap=#mapHead2></TD></TR>
-<map NAME='mapHead1'>
-<area shape="rect" href=https://www.nih.gov coords="0,0,82,50">
-<area shape="rect" href=https://www.irp.nia.nih.gov coords="83,0,167,50">
-<area shape="rect" href=https://www.irp.nia.nih.gov coords="0,51,167,86">
-</map>
 <map NAME='mapHead2'>
-<area shape="rect" href=index.html coords="0,0,677,50">
-<area shape="rect" href=https://www.irp.nia.nih.gov/branches/lg/dgas/dgas.htm coords="0,51,677,86">
+<area shape="rect" href=index.html coords="0,0,677,80">
 </map>
 </TABLE>
 
@@ -983,7 +977,7 @@ them with missing values.
 is to compare it with already available annotated gene sets, e.g., Gene Ontology (GO). If the
 number of common (=overlapping) genes is greater than expected by random, then a hypergeometric 
 distribution is used to evaluate the significance of gene overlap: 
-z = (q-p)/sqrt[sqrt(p*(1-p)*(N-n)/(N-1)/n)], 
+z = (q-p)/sqrt[(p*(1-p)*(N-n)/(N-1)/n)], 
 where z = <a href="#zvalue">z-value</a>; p = number of genes in the annotated set, n, divided by the total number of 
 annotated genes, N; and q = number of overlapping genes divided by the number of genes in your initial
 set. See also section <a href=#geneset_open">3.12.</a>.

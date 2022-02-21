@@ -24,7 +24,7 @@ use File::Copy;
 # or otherwise disclaimed to anyone, in whole or in part, without the
 # prior written consent of NIA.
 #
-# Programmer: Alexei Sharov (sharoval@mail.nih.gov)
+# Programmer: Alexei Sharov (sharov@comcast.net)
 # National Institute on Aging, Genetics Lab
 #*******************************************************
 
@@ -180,7 +180,7 @@ if($form_info =~ /\n/){
 		if(check_form($key,$value)){
 			$loginname = check_sessionID($sessionID);
 			if(ref($value) eq 'ARRAY'){ $value = "$value->[0]"; }
-			my $email1 = "sharoval\@mail.nih.gov";
+			my $email1 = "sharov\@comcast.net";
 			`echo "$loginname: $key - $value" | mailx -s "ExAtlas failed" $email1`;
 			error_message("Operation failed!","continue");
 		}
@@ -265,7 +265,7 @@ if($form_info =~ /\n/){
 		if($key=~/^(new_)*passwd1*$/ && ($x<4 || $x>20) && $hashInput{"loginname"} !~ /^guest$/i){ error_message("Password should be from 5 to 20 characters!","register"); }
 		$hashInput{$key} = $value;
 		if(check_form($key,$value)){
-			my $email1 = "sharoval\@mail.nih.gov";
+			my $email1 = "sharov\@comcast.net";
 			`echo "$key - $value" | mailx -s "ExAtlas failed" $email1`;
 			error_message("Operation failed!");
 		}
@@ -313,7 +313,7 @@ if(!file_exist("$PATH_INFO/$loginname-config.txt")){
 	}else{
 		my @files = glob("$PATH_DATA/$loginname-*");
 		if(@files>0){
-			print "Configuration file not found!<br>Contact sharoval(at)mail.nih.gov to restore it.\n";
+			print "Configuration file not found!<p>\n";
 		}else{
 			copy "$PATH_DATA/default-config.txt", "$PATH_INFO/$loginname-config.txt";
 		}
@@ -754,7 +754,7 @@ if($loginname !~ /^guest\d+/i){
 	print "<INPUT TYPE=\"submit\" VALUE=\"Change password\">\n";
 	print "</table></FORM>\n";
 }
-print "<i>Please report any problems to <a href=mailto:sharoval\@mail.nih.gov>webmaster</a><p>\n";
+print "<i>Please report any problems to <a href=mailto:sharov\@comcast.net>webmaster</a><p>\n";
 print "</BODY>\n";
 print "</HTML>\n";
 exit(0);
@@ -1001,7 +1001,7 @@ print "<INPUT NAME=organismID TYPE=hidden VALUE=\"$organismID\">\n";
 print "<INPUT NAME=logFileID TYPE=hidden VALUE=\"$logFileID\">\n";
 print "</FORM><p>\n";
 print "<HR NOSHADE></HR>\n";
-print "<p><i>Please report any problems to <a href=mailto:sharoval\@mail.nih.gov>webmaster</a><p>\n";
+print "<p><i>Please report any problems to <a href=mailto:sharov\@comcast.net>webmaster</a><p>\n";
 print "<INPUT TYPE=button VALUE=\"Cancel (close window)\" style=\"width: 200px;\" LANGUAGE=javascript onClick=window.close();><p>\n";
 print "</BODY>\n";
 print "</HTML>\n";
@@ -3407,7 +3407,7 @@ if($include_graphs){
 	print OUT "<sup>*)</sup><b>Notes:</b> $notes<p>\n";
 }
 print OUT "<p><HR NOSHADE><p>\n";
-print OUT "<p><i>Please report any problems to <a href=mailto:sharoval\@mail.nih.gov>webmaster</a><p>\n";
+print OUT "<p><i>Please report any problems to <a href=mailto:sharov\@comcast.net>webmaster</a><p>\n";
 print OUT "<INPUT TYPE=button VALUE=\"Close window\" style=width:160px; LANGUAGE=\"javascript\" onClick=\"window.close();\"><p>\n";
 print OUT "</BODY></HTML>\n";
 close OUT;
@@ -5862,7 +5862,7 @@ else{
 		print "</TABLE><p>\n";
 	}
 }
-print "<p><i>Please report any problems to <a href=mailto:sharoval\@mail.nih.gov>webmaster</a><p>\n";
+print "<p><i>Please report any problems to <a href=mailto:sharov\@comcast.net>webmaster</a><p>\n";
 print "<INPUT TYPE=button VALUE=\" Close window \" LANGUAGE=\"javascript\" onClick=\"window.close();\">\n";
 print "</BODY></HTML>\n";
 exit(0);
@@ -8656,7 +8656,7 @@ while(my $line = <INFO>){
 close INFO;
 if($logFileID){ file_append("Correlation analysis started ..","$PATH_OUTPUT/$logFileID.txt"); }
 my $count;
-open(INFO,"<$PATH_DATA/$file_matrix_full") or error_message("Cannot open $file_matrix",$logFileID);
+open(INFO,"<$PATH_DATA/$file_matrix_full") or error_message("Cannot open A2 $file_matrix",$logFileID);
 while(my $line=<INFO>){
 	if($line =~ /^!series_matrix_table_begin/i){ last; }
 }
@@ -8939,7 +8939,7 @@ print OUT "<INPUT NAME=organismID TYPE=hidden VALUE=$organismID>\n";
 print OUT "<INPUT NAME=remove_samples TYPE=hidden>\n";
 print OUT "</FORM><HR NOSHADE></HR>\n";
 print OUT "<INPUT TYPE=button VALUE=\" Cancel (close window) \" LANGUAGE=\"javascript\" onClick=\"window.close();\"><p>\n";
-print OUT "<p><i>Please report any problems to <a href=mailto:sharoval\@mail.nih.gov>webmaster</a><p>\n";
+print OUT "<p><i>Please report any problems to <a href=mailto:sharov\@comcast.net>webmaster</a><p>\n";
 print OUT "</BODY>\n";
 print OUT "</HTML>\n";
 close OUT;
@@ -8970,7 +8970,7 @@ for(my $i=0; $i<$n; $i++){
 if(!@remove){ error_message("No samples were selected for removal. Task cancelled"); }
 @remove = sort {$b<=>$a} @remove;
 my $fileID = get_outputID(1);
-open(INFO,"<$PATH_DATA/$file_matrix_full") or error_message("Cannot open $file_matrix");
+open(INFO,"<$PATH_DATA/$file_matrix_full") or error_message("Cannot open A3 $file_matrix");
 open(OUT,">$PATH_OUTPUT/$fileID.txt") or error_message("Cannot open temp file");
 my $line;
 my $done=0;
@@ -9093,7 +9093,7 @@ foreach my $symbol (keys %symbols){
 @sorted = sort {$a<=>$b} @sorted;
 
 my $fileID = get_outputID();
-open(INFO,"<$PATH_DATA/$file_matrix_full") or error_message("Cannot open $file_matrix");
+open(INFO,"<$PATH_DATA/$file_matrix_full") or error_message("Cannot open A7 $file_matrix");
 open(OUT,">$PATH_OUTPUT/$fileID.txt") or error_message("Cannot open temp.txt");
 my $done=0;
 while(my $line=<INFO>){
@@ -10612,7 +10612,7 @@ print "<INPUT NAME=organismID TYPE=hidden VALUE=$organismID>\n";
 print "</FORM>\n";
 print "<HR NOSHADE></HR>\n";
 print "<INPUT TYPE=button VALUE=\" Cancel (close window) \" LANGUAGE=\"javascript\" onClick=\"window.close();\"><p>\n";
-print "<p><i>Please report any problems to <a href=mailto:sharoval\@mail.nih.gov>webmaster</a><p>\n";
+print "<p><i>Please report any problems to <a href=mailto:sharov\@comcast.net>webmaster</a><p>\n";
 print "</BODY>\n";
 print "</HTML>\n";
 exit(0);
@@ -11347,7 +11347,7 @@ print "<INPUT NAME=search_term TYPE=hidden VALUE=$search_term>\n";
 print "</FORM>\n";
 print "<p><HR NOSHADE></HR>\n";
 print "<INPUT TYPE=button VALUE=\" Cancel (close window) \" LANGUAGE=\"javascript\" onClick=\"window.close();\"><p>\n";
-print "<p><i>Please report any problems to <a href=mailto:sharoval\@mail.nih.gov>webmaster</a><p>\n";
+print "<p><i>Please report any problems to <a href=mailto:sharov\@comcast.net>webmaster</a><p>\n";
 print "</BODY>\n";
 print "</HTML>\n";
 }
@@ -11797,7 +11797,7 @@ print "</FORM><p>\n";
 
 print "<p><HR NOSHADE></HR>\n";
 print "<INPUT TYPE=button VALUE=\"     Close window     \" LANGUAGE=\"javascript\" onClick=\"window.close();\"><p>\n";
-print "<p><i>Please report any problems to <a href=mailto:sharoval\@mail.nih.gov>webmaster</a><p>\n";
+print "<p><i>Please report any problems to <a href=mailto:sharov\@comcast.net>webmaster</a><p>\n";
 print "</BODY>\n";
 print "</HTML>\n";
 exit(0);
@@ -11975,7 +11975,7 @@ if(!%hashPlatform){
 	error_message("Matrix assembly failed: no samples extracted",$logFileID);
 }
 #Save the combined matrix file
-open(OUT,">$PATH_DATA/$loginname-$file_matrix") or error_message("Cannot open $file_matrix",$logFileID);
+open(OUT,">$PATH_DATA/$loginname-$file_matrix") or error_message("Cannot open A6 $file_matrix",$logFileID);
 print OUT "!Series_title\t\"$file_matrix\"\n";
 if($file_description){
 	print OUT "!Series_summary\t\"$file_description\"\n";
@@ -12264,7 +12264,8 @@ if($platform !~ /^GPL\d+$/ && $len > 13){
 }
 use LWP;
 my $browser = LWP::UserAgent->new;
-my $content = $browser->get("https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?view=data&acc=$platform");
+my $res = $browser->get("https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?view=data&acc=$platform");
+my $content = $res->content();
 if(!$content){
 	$$error_ref = "Platform not found in GEO"; return 0;
 }
@@ -15781,11 +15782,14 @@ if($selected_items =~ /^copy-/){
 	}
 	my @data_geneset;
 	my $Ncopied;
-	if($hashInput{"copy_file"} =~ /-\s*New\s*file\s*-/){
+	my $xxx = $hashInput{"copy_file"};
+	if($hashInput{"copy_file"} eq "0"){
+		#print "Copy file A4 $xxx<br>\n";
 		if($count==@item_names && !$geneset_filtered){
 			copy "$filename_full", "$file_copy_full";
 			$Ncopied = $count;
 		}else{
+			#print "Copy file A4 $filename_full $file_copy_full<br>\n";
 			open(INFO,'<',$filename_full) or error_message("Cannot open file","continue");
 			open(OUT, ">$file_copy_full") or error_message("Cannot write to file","continue");
 			if($file_type eq "matrix"){
@@ -15874,6 +15878,7 @@ if($selected_items =~ /^copy-/){
 		unlink("$PATH_INFO/$loginname-config1.txt");
 	}
 	else{   #Combine files
+		print "Copy file A5 $xxx<br>\n";
 		if($file_type eq "geneset"){
 			my %exist;
 			open(INFO,'<',$file_copy_full) or error_message("Cannot read file","continue");
@@ -16345,7 +16350,7 @@ if($option_norm eq "quantile"){
 	return;
 }
 open(INFO,"<$PATH_OUTPUT/$fileID.txt") or error_message("Cannot open $fileID.txt");
-open(OUT,">$PATH_DATA/$file_matrix_full") or error_message("Cannot open $file_matrix_full");
+open(OUT,">$file_matrix_full") or error_message("Cannot open A1 $file_matrix_full");
 my $line;
 my $done=0;
 while($line=<INFO>){
@@ -16779,7 +16784,7 @@ my $comment = shift;
 
 my @contributors;
 #print "<p>Sub = parse_matrix_file\n";
-open(INFO,'<',$file_matrix) or error_message("Cannot open $file_matrix",$comment);
+open(INFO,'<',$file_matrix) or error_message("Cannot open A4 $file_matrix",$comment);
 while(my $line=<INFO>){
 	chop $line;
 	if(!$line){ next; }
@@ -16971,9 +16976,59 @@ if(@attribNames){
 return;
 }
 
-
 #***********************************
 sub  get_gene_homolog
+#***********************************
+{
+my $organismID = shift; #input
+my $organismID1 = shift;  #output
+my $geneHomolog = shift;
+my $logfileID = shift;
+
+if(!$geneHomolog){ error_message("Hash pointer homologene missing",$logfileID); }
+if(!$organismID || !$organismID1){ error_message("In get_gene_homolog: organismID missing",$logfileID); }
+%$geneHomolog=();
+my %indirect1;
+my %indirect2;
+open (INFO_HOM,"<$PATH_DATA/gene_orthologs_symbol.txt") or error_message("Gene orthologs not opened",$logfileID);
+while(my $line = <INFO_HOM>){
+	$line =~ s/\n$//;
+	if(!$line || $line =~ /^[#!]/){ next; }
+	my ($speciesID,$geneID,$symbol,$speciesID1,$geneID1,$symbol1)=split(/\t/, $line);
+	if($speciesID==$organismID && $speciesID1==$organismID1){
+		$geneHomolog->{$symbol} = $symbol1;
+	}elsif($speciesID==$organismID1 && $speciesID1==$organismID){
+		$geneHomolog->{$symbol1} = $symbol;
+	}elsif($speciesID==$organismID){
+		$indirect1{$speciesID1}->{$symbol} = $symbol1;
+	}elsif($speciesID==$organismID1){
+		$indirect2{$speciesID1}->{$symbol} = $symbol1;
+	}elsif($speciesID1==$organismID){
+		$indirect1{$speciesID}->{$symbol1} = $symbol;
+	}elsif($speciesID1==$organismID1){
+		$indirect2{$speciesID}->{$symbol1} = $symbol;
+	}
+}
+close INFO_HOM;
+foreach my $inter1 (keys %indirect1){
+	my $ref1 = $indirect1{$inter1};
+	my $ref2 = $indirect2{$inter1};
+	if(!$ref2){ next; }
+	foreach my $symbol (keys %$ref1){
+		foreach my $symbol1 (keys %$ref2){
+			if($ref1->{$symbol} eq $ref2->{$symbol1}){
+				if(!$geneHomolog->{$symbol}){
+					$geneHomolog->{$symbol} = $symbol1;
+				}
+			}
+		}
+	}
+}
+return;
+}
+
+#***********************************
+sub  get_gene_homolog_old
 #***********************************
 {
 my $organismID1 = shift; #input
@@ -16990,7 +17045,7 @@ while(my $line = <INFO_HOM>){
 	chop $line;
 	if(!$line){ next; }
 	my($homologeneID,$speciesID,$geneID,$symbol,$proteinID,$protein) = split(/\t/,$line);
-	if($speciesID==$organismID1 || $speciesID==$organismID){
+	if($speciesID==$organismID || $speciesID==$organismID1){
 		my $ii=0;
 		if($speciesID==$organismID){ $ii=1; }
 		$homologene[$homologeneID]->[$ii] = $symbol;
@@ -17554,7 +17609,7 @@ if($file_metaanalysis){ print "<INPUT NAME=file_metaanalysis TYPE=hidden VALUE=$
 if($description_metaanalysis){ print "<INPUT NAME=description_metaanalysis TYPE=hidden VALUE=\"$description_metaanalysis\">\n"; }
 print "</FORM><p>\n";
 print "<HR NOSHADE></HR>\n";
-print "<p><i>Please report any problems to <a href=mailto:sharoval\@mail.nih.gov>webmaster</a><p>\n";
+print "<p><i>Please report any problems to <a href=mailto:sharov\@comcast.net>webmaster</a><p>\n";
 print "<INPUT TYPE=button VALUE=\"Cancel (close window)\" style=\"width: 200px;\" LANGUAGE=javascript onClick=window.close();><p>\n";
 print "</BODY>\n";
 print "</HTML>\n";
@@ -19233,6 +19288,35 @@ if(!open(INFO,"<$PATH_DATA/$filename")){
 		error_message("File $filename not found!");
 	}
 }
+my @items =split(/\s+/,`ls -l $PATH_DATA/$filename`);
+if($items[4] > 5000000){
+	my $fileID = get_outputID(1);
+	open(OUT,">$PATH_OUTPUT/$fileID.txt");
+	while(my $line=<INFO>){
+		chop $line;
+		print OUT $line;
+		if($line=~/^!/){ print OUT "\n"; next; }
+		if($add_symbols){
+			my $line = <INFO1>;
+			chop $line;
+			my ($junk,$junk1,@data)=split(/\t/,$line);
+			splice(@data,0,$nCol);
+			print OUT "\t".join("\t",@data);
+		}
+		print OUT "\n";
+	}
+	close OUT;
+	close INFO;
+	if($add_symbols){ close INFO1; }
+	print "<HTML><HEAD><TITLE>ExAtlas response</TITLE>\n";
+	print_header();
+	print "<H1>File $filename</H1>\n";
+	print "<a href=\"$HOME_ADDRESS/output/$fileID.txt\" target=_BLANK1620>$fileID.txt</a><p>\n";
+	print "<p><HR NOSHADE><p>\n";
+	print "<INPUT TYPE=button VALUE=\"Close window\" style=width:160px; LANGUAGE=\"javascript\" onClick=\"window.close();\"><p>\n";
+	print "</BODY></HTML>\n";
+	exit(0);
+}
 print "<pre>";
 while(my $line=<INFO>){
 	chop $line;
@@ -19489,8 +19573,8 @@ if($SECURITY>1 && $new_name ne "administrator"){
 if(!$firstname || !$lastname || !$new_name || !$new_passwd || !$email){
 	error_message("Form not fully filled. Registration failed!","register");
 }
-if(length($firstname)>20 || length($lastname)>20 || length($new_name)>20 || length($new_passwd)>20 || length($email)>30){
-	error_message("Too long strings!\nNames should be <20 characters, email <30 characters.\nRegistration failed!","register");
+if(length($firstname)>25 || length($lastname)>25 || length($new_name)>25 || length($new_passwd)>30 || length($email)>100){
+	error_message("Too long strings!\nNames should be <25 characters, email <100 characters.\nRegistration failed!","register");
 }
 if(length($new_name)<4 || length($new_passwd)<4){
 	error_message("Too short loginname or password!\nMinimum length is 5 characters.\nRegistration failed!","register");
@@ -19926,7 +20010,7 @@ print "<HTML><HEAD><TITLE>ExAtlas response</TITLE>\n";
 print_header();
 print $message."\n";
 print "<p><HR NOSHADE><p>\n";
-print "<i>Please report any problems to <a href=mailto:sharoval\@mail.nih.gov>webmaster</a><p>\n";
+print "<i>Please report any problems to <a href=mailto:sharov\@comcast.net>webmaster</a><p>\n";
 if($comment eq "continue"){
 	print "<FORM NAME=exatlas ACTION=$CGI_ADDRESS/exatlas.cgi METHOD=POST>\n";
 	print "<INPUT NAME=\"sessionID\" TYPE=hidden VALUE=\"$sessionID\">\n";
@@ -20276,7 +20360,7 @@ if($pid){
 }
 # Child process
 if($items[0]>=1){
-	my @command = ("$PATH_BIN/update_platforms.pl","array_platforms.txt","-data","../../exatlasInfo/data","-bin","$PATH_BIN","-log","$PATH_OUTPUT/$logFileID.txt");
+	my @command = ("$PATH_BIN/update_platforms.pl","array_platforms.txt","-data",$PATH_DATA,"-bin",$PATH_BIN,"-log","$PATH_OUTPUT/$logFileID.txt");
 	if($items[0]>9){ push(@command,"-ex"); }
 	system(@command);
 	my $response = parse_logfile("$PATH_OUTPUT/$logFileID.txt");
@@ -20284,13 +20368,13 @@ if($items[0]>=1){
 	print "Finished1<br>\n";
 }
 if($items[1]>=1){
-	system("$PATH_BIN/GEO_update.pl","GEO_series_summary.txt","-data","../../exatlasInfo/data","-log","$PATH_OUTPUT/$logFileID.txt");
+	system("$PATH_BIN/GEO_update.pl","GEO_series_summary.txt","-data",$PATH_DATA,"-log","$PATH_OUTPUT/$logFileID.txt");
 	my $response = parse_logfile("$PATH_OUTPUT/$logFileID.txt");
 	if($response =~ /task_stopped/){ print "Task stopped!<br>$response<br>\n"; exit(0); }
 	print "Finished2<br>\n";
 }
 if($items[2]>=1){
-	my @command = ("$PATH_BIN/update_exatlas.pl","-info","../../exatlasInfo/info","-data", "../../exatlasInfo/data","-log","$PATH_OUTPUT/$logFileID.txt","-skip","1,2");
+	my @command = ("$PATH_BIN/update_exatlas.pl","-info",$PATH_INFO,"-data", $PATH_DATA,"-log","$PATH_OUTPUT/$logFileID.txt","-skip","1,2");
 	if($items[3]>0){ push(@command,"-update",$items[3]); }
 	system(@command);
 	my $response = parse_logfile("$PATH_OUTPUT/$logFileID.txt");
@@ -20522,7 +20606,7 @@ if($key eq "upload_filename"){
 		$value->[0] =~ s/\.txt$/\@txt/; $value->[0] =~ s/\./_/g; $value->[0] =~ s/\@/./;
 	}
 	if(!$value->[0]){ error_message("Invalid file name"); }
-	my $email1 = "sharoval\@mail.nih.gov";
+	my $email1 = "sharov\@comcast.net";
 	my $filename = $value->[0];
 	unless($filename =~ /^[-.\w]+$/ && length($filename)<=150){
 		print "File name should not include special characters or spaces (length<150). Rename file<br>\n";
@@ -20551,7 +20635,7 @@ if($key eq "upload_filename"){
 }
 if($key =~ /^(new_)*passwd1*$/){
 	if($hashInput{"loginname"}=~/^guest/i){ return 0; }
-	if(length($value)>20 || length($value)<3){ return 1; }
+	if(length($value)>60 || length($value)<3){ return 1; }
 	return 0;
 }
 elsif($key =~ /^(last|first)name$/){
