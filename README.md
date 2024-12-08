@@ -1,5 +1,5 @@
 # ExAtlas
-Analysis of gene expression and gene set data http://webtools.systemsmedicine.jp/exatlas/
+Analysis of gene expression and gene set data https://kolab.elixirgensci.com/exatlas/
 
 Developed at the National Institute on Aging, NIA/NIH, Baltimore USA.
 Programmer Alexei Sharov sharov@comcast.net
