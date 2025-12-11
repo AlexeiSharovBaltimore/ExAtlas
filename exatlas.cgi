@@ -4,13 +4,13 @@ use POSIX;
 use File::Copy;
 
 #*******************************************************
-# Copyright @2014, The National Institute on Aging (NIA/NIH).
+# Copyright @2025, Alexei Sharov.
 # All rights reserved.
 # 
-# This software is provided "AS IS".  NIA/NIH makes no warranties, express
+# This software is provided "AS IS".  Alexei Sharov (AS) makes no warranties, express
 # or implied, including no representation or warranty with respect to
 # the performance of the software and derivatives or their safety,
-# effectiveness, or commercial viability.  NIA does not warrant the
+# effectiveness, or commercial viability.  AS does not warrant the
 # merchantability or fitness of the software and derivatives for any
 # particular purpose, or that they may be exploited without infringing
 # the copyrights, patent rights or property rights of others. NIA shall
@@ -22,7 +22,7 @@ use File::Copy;
 # 
 # This software program may not be sold, leased, transferred, exported
 # or otherwise disclaimed to anyone, in whole or in part, without the
-# prior written consent of NIA.
+# prior written consent of AS.
 #
 # Programmer: Alexei Sharov (sharov@comcast.net)
 # National Institute on Aging, Genetics Lab
