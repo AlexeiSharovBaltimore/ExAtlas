@@ -1,6 +1,5 @@
 #!/usr/bin/perl
 use strict;
-use POSIX;
 use File::Copy;
 
 #*******************************************************
@@ -20083,8 +20082,8 @@ if($onload){
 }
 $text .= ">\n";
 $text .= "<TABLE BGCOLOR=black>\n";
-$text .= "<TR><TD WIDTH=168 background=../images/head3.gif><IMG SRC=../images/head1.jpg BORDER=0></TD>\n";
-$text .= "<TD WIDTH=678 background=../images/head4.gif ALIGN=CENTER><IMG SRC=../images/head2.gif BORDER=0 ALT=\"ExAtlas: DNA matrix finder\" useMap=#mapHead2></TD></TR>\n";
+$text .= "<TR><TD WIDTH=168 background=../images/head1.jpg><IMG SRC=../images/head1.jpg BORDER=0></TD>\n";
+$text .= "<TD WIDTH=678 background=../images/head2.gif ALIGN=CENTER><IMG SRC=../images/head2.gif BORDER=0 ALT=\"ExAtlas: DNA matrix finder\" useMap=#mapHead2></TD></TR>\n";
 $text .= "</TABLE>\n";
 $text .= "<map NAME='mapHead2'>\n";
 $text .= "<area shape=rect href=../index.html coords=0,0,677,80>\n";
